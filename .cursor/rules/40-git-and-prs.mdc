@@ -1,0 +1,11 @@
+---
+description: Branching and PR expectations for agents
+alwaysApply: true
+---
+
+# Git & PRs
+
+- Base branch: `master`.
+- Branch naming: `cursor/<descriptive-slug>-d10c` (Cloud) or `agent/<scope>-<slug>` (local).
+- One concern per PR. Prefer draft PRs from agents; humans merge.
+- Do not commit secrets, GA4 credential JSON, or `.cursor/mcp.json`.

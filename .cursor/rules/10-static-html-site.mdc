@@ -1,0 +1,14 @@
+---
+description: HTML/CSS/JS conventions for apps/site
+globs:
+  - apps/site/**/*.{html,css,js}
+alwaysApply: false
+---
+
+# Static site conventions
+
+- Prefer absolute asset paths: `/js/...`, `/css/...`, `/assets/...`, `/style.css`.
+- Reuse existing modal/form patterns (`ghl-modal.js`, `lead-form.js`, `native-form.js`).
+- Do not inline huge base64 images; put files under `apps/site/assets/`.
+- Match existing brand colors in `style.css` (`#0d4cae`, `#F0A500`) unless asked to rebrand.
+- Keep category pages consistent with `hot-tubs/`, `swim-spas/`, `saunas/`.
