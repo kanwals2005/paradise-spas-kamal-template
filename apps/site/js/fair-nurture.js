@@ -55,25 +55,25 @@
   var PRODUCTS = [
     {
       name: 'Artesian South Seas 743D Deluxe',
-      image: '../product-artesian-748b.png',
+      image: '/assets/products/product-artesian-748b.png',
       descriptor: 'For aching joints and bad sleep — the therapy-first tub',
       price: 'As low as $95/mo'
     },
     {
       name: 'Artesian South Seas 748B Deluxe',
-      image: '../product-artesian-748b.png',
+      image: '/assets/products/product-artesian-748b.png',
       descriptor: 'For the whole family — room for everyone, built to take teenagers',
       price: 'As low as $119/mo'
     },
     {
       name: 'Artesian South Seas 533DL Deluxe',
-      image: '../lifestyle-hot-tub.png',
+      image: '/assets/lifestyle/lifestyle-hot-tub.png',
       descriptor: 'For just the two of you — smaller, premium, done right for two',
       price: 'As low as $102/mo'
     },
     {
       name: 'Strong Spas Summit Series',
-      image: '../product-strong-g2.png',
+      image: '/assets/products/product-strong-g2.png',
       descriptor: 'For the recovery routine — if you\u2019re building a hot/cold setup',
       price: 'As low as $99/mo'
     }
