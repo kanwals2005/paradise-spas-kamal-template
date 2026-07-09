@@ -76,8 +76,8 @@ Requires [Wrangler](https://developers.cloudflare.com/workers/wrangler/) and `CL
 | `product-page.js` | Product page gallery/tabs |
 | `_redirects` | Cloudflare URL redirects |
 | `thank-you.html` | Post-form redirect + conversion events |
-| `dashboard/` | Looker Studio setup + GHL→Sheets sync for Increase ROAS reporting |
-| `functions/api/lead.js` | Lead vault API (Sheet backup → GHL) — see `dashboard/LEAD_INSURANCE_OWNER_SETUP.md` |
+| `apps/dashboard/` | Looker Studio setup + GHL→Sheets sync for Increase ROAS reporting |
+| `functions/api/lead.js` | Lead vault API (Sheet backup → GHL) — see `apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md` |
 | `lead-form.js` | Native gate form submit handler |
 
 ## Pages

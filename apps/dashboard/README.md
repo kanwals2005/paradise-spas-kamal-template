@@ -34,6 +34,6 @@ This folder holds automation + setup guides.
 
 | Event | File |
 |-------|------|
-| `click_call` | `call-tracking.js` |
-| `pricing_click` | `pricing-tracking.js` |
-| `generate_lead` | `thank-you.html` |
+| `click_call` | `apps/site/js/call-tracking.js` |
+| `pricing_click` | `apps/site/js/pricing-tracking.js` |
+| `generate_lead` | `apps/site/thank-you.html` |

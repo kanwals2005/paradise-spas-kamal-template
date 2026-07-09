@@ -4,8 +4,8 @@ Portable kit for **agency / service / funnel sites** (no inventory, no hot tubs)
 
 Copy this entire `agency-starter/` folder contents into your new website project root, then follow the steps below.
 
-**Full playbook (B2B agency site):** `../dashboard/AGENCY_B2B_TRACKING_AND_LEADS_SOP.md`  
-**Generic client playbook:** `../dashboard/AGENCY_TRACKING_AND_LEADS_SOP.md`
+**Full playbook (B2B agency site):** `../../apps/dashboard/AGENCY_B2B_TRACKING_AND_LEADS_SOP.md`  
+**Generic client playbook:** `../../apps/dashboard/AGENCY_TRACKING_AND_LEADS_SOP.md`
 
 ---
 
