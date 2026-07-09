@@ -1,0 +1,649 @@
+{
+  "run_id": "trun_4a050d7e3090454892326cdc9e03560e",
+  "interaction_id": "trun_4a050d7e3090454892326cdc9e03560e",
+  "result_url": "https://platform.parallel.ai/play/deep-research/trun_4a050d7e3090454892326cdc9e03560e",
+  "status": "completed",
+  "output": {
+    "basis": [
+      {
+        "field": "executive_summary",
+        "reasoning": "Assessment reasoning: The user query asks for comprehensive executive summary covering multiple facets (folder structure, setup order, branching strategies, reorganizing a messy monorepo, official docs references, and a concrete migration plan). The provided field_answer highlights several relevant points (rules vs skills, AGENTS.md guidance, monorepo at repo root, agent branching model, asset ignoring guidelines, monorepo Pages structure, plugin surface, and Cloudflare integration). However, it does not comprehensively address all requested aspects like explicit folder layout (Cursor loves AGENTS.md, .cursor/rules, .cursor/skills, CLAUDE.md vs README, MCP vs rules vs skills distinctions), the exact setup order (rules, skills, plugins, MCP servers, branching) in a step-by-step fashion, complete git branching strategies (naming conventions, base branches, PR workflow, monorepo vs multi-repo implications), detailed reorganization of the described dealer site with migration steps and target tree, or a thorough synthesis of official docs from 2025\u20132026. Therefore, completeness should be false. Excerpts show alignment to several points (AGENTS.md, rules/skills, monorepo guidance, ignore rules, Pages monorepo concepts, plugin surface, Cursor/Cloudflare integration), supporting that the answer has basis in the sources, so supported should be true.",
+        "citations": [
+          {
+            "url": "https://cursor.com/docs/skills",
+            "excerpts": [
+              "Extend AI agents with specialized capabilities using Agent Skills, an open standard for packaging reusable knowledge and scripts."
+            ],
+            "title": "Agent Skills | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/docs/rules",
+            "excerpts": [
+              "Configure persistent instructions with Project, Team, and User Rules, plus AGENTS.md. Learn best practices for effective coding guidelines."
+            ],
+            "title": "Rules | Cursor Docs"
+          },
+          {
+            "url": "https://agents.md/",
+            "excerpts": [
+              "AGENTS.md is a simple, open format for guiding coding agents, used by over 60k open-source projects. Think of it as a README for agents."
+            ],
+            "title": "AGENTS.md"
+          },
+          {
+            "url": "https://www.morphllm.com/agents-md-guide",
+            "excerpts": [
+              "Jun 9, 2026 \u2014 The AGENTS.md spec is plain Markdown with no required fields. Recommended sections: overview, build/test commands, code style, testing,"
+            ],
+            "title": "AGENTS.md Spec (2026): Recommended Sections + ..."
+          },
+          {
+            "url": "https://forum.cursor.com/t/finding-skills-rules-in-the-same-repo-above-the-project-root/160263",
+            "excerpts": [
+              "May 11, 2026 \u2014 For monorepos, I'd generally recommend opening Cursor at the repository root rather than at a subdomain or package folder."
+            ],
+            "title": "Finding skills/rules in the same repo above the project root"
+          },
+          {
+            "url": "https://cursor.com/docs/cloud-agent",
+            "excerpts": [
+              "Run Agent in the cloud for continuous coding assistance."
+            ],
+            "title": "Cloud Agents | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/docs/reference/ignore-file",
+            "excerpts": [
+              "Control which files Cursor can access using .cursorignore and .cursorindexingignore files. Pattern syntax, global ignore, default ignore list,"
+            ],
+            "title": "Ignore File | Cursor Docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/pages/configuration/monorepos/",
+            "excerpts": [
+              "Apr 21, 2026 \u2014 A monorepo is a repository that has multiple subdirectories each containing its own application. Set up You can create multiple projects using the same"
+            ],
+            "title": "Monorepos \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/pages/functions/wrangler-configuration/",
+            "excerpts": [
+              "Jun 25, 2026 \u2014 Pages Functions can be configured two ways, either via the Cloudflare dashboard or the Wrangler configuration file, a file used to customize the development"
+            ],
+            "title": "Configuration \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://cursor.com/changelog",
+            "excerpts": [
+              "Jun 30, 2026 \u2014 You can now add and manage plugins, skills, MCPs, subagents, rules, commands, and hooks at the user, team, or workspace level, and even bring"
+            ],
+            "title": "What's New in Cursor \u2014 Latest Updates & Release Notes"
+          },
+          {
+            "url": "https://developers.cloudflare.com/agent-setup/cursor/",
+            "excerpts": [
+              "Install Cursor. Download Cursor for macOS, Windows, or Linux from the Cursor downloads page \u2197. For additional information, see the Cursor installation guide \u2197."
+            ],
+            "title": "Cursor + Cloudflare \u00b7 Agent setup docs"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer",
+        "reasoning": "Reasoning: The field_description asks for best practices for organizing a Cursor IDE/Cloud Agent project, including specific files (AGENTS.md, .cursor/rules, CLAUDE.md vs README), setup order, git branching, reorganizing a messy monorepo, official sources, and a concrete target tree/migration plan. The field_answer provides a detailed comparative model (four-file mental model), recommended roles for AGENTS.md, CLAUDE.md, and Cursor rules, near vs far file precedence, and a recommendation to simplify the repo by moving or renaming DEALERSHIP_CONVERSION_PLAYBOOK.md. It references multiple sources and outlines a mechanism and implication for rule placement. However, several explicit claims (e.g., exact four-file model as the converged standard, universal practitioner migration steps, and precise target tree/migration order for the dealer template) are not directly verifiable from the provided excerpts. Therefore, I judge completeness as true (it covers the core expectations and makes concrete recommendations), but I judge the field answer as not fully supported by the provided excerpts (some claims aren\u2019t explicitly corroborated by the excerpts).",
+        "citations": [
+          {
+            "url": "https://agents.md/",
+            "excerpts": [
+              "AGENTS.md is a simple, open format for guiding coding agents, used by over 60k open-source projects. Think of it as a README for agents."
+            ],
+            "title": "AGENTS.md"
+          },
+          {
+            "url": "https://www.morphllm.com/agents-md-guide",
+            "excerpts": [
+              "Jun 9, 2026 \u2014 The AGENTS.md spec is plain Markdown with no required fields. Recommended sections: overview, build/test commands, code style, testing,"
+            ],
+            "title": "AGENTS.md Spec (2026): Recommended Sections + ..."
+          },
+          {
+            "url": "https://cursor.com/docs/rules",
+            "excerpts": [
+              "Configure persistent instructions with Project, Team, and User Rules, plus AGENTS.md. Learn best practices for effective coding guidelines."
+            ],
+            "title": "Rules | Cursor Docs"
+          },
+          {
+            "url": "https://forum.cursor.com/t/cursor-rules-in-monorepos/148274",
+            "excerpts": [],
+            "title": "Cursor Rules in Monorepos - Support / Help - Cursor - Community Forum"
+          },
+          {
+            "url": "https://kirill-markin.com/articles/cursor-ide-rules-for-ai/",
+            "excerpts": [
+              "Apr 19, 2025 \u2014 I'm sharing my base-level cursor project rules here - the global settings I use in Cursor IDE. These rules form the foundation for all my development work."
+            ],
+            "title": "Cursor IDE Rules for AI: Guidelines for Specialized AI ..."
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "field": "rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer",
+        "reasoning": "Assessment reasoning: The user query requests a comprehensive set of modern best practices (as of July 2026) for organizing a Cursor IDE / Cursor Cloud Agent project, including folder structure, setup order, git branching strategies, reorganizing a heavy static site monorepo, sources of truth from official Cursor docs, and a concrete migration plan. The provided field_answer focuses on a high-level conceptual model (rules, skills, MCPs, commands, etc.), a few concrete mechanism descriptions, and a minimal set of recommendations (e.g., prioritize Cloudflare plugin first, keep small rules and domain-specific skills). It does not deliver the breadth of requested items (1\u20136) in depth, nor a concrete target tree or migration steps. Therefore completeness should be false. The excerpts do support key concepts mentioned in the field_answer (roles of rules/skills/MCPs, When to use each, MCP context, examples, and a Faire case study) but do not constitute full coverage of all requested topics. So, completeness = false; supported = true (partial alignment with excerpts).",
+        "citations": [
+          {
+            "url": "https://cursor.com/changelog",
+            "excerpts": [
+              "Jun 30, 2026 \u2014 You can now add and manage plugins, skills, MCPs, subagents, rules, commands, and hooks at the user, team, or workspace level, and even bring"
+            ],
+            "title": "What's New in Cursor \u2014 Latest Updates & Release Notes"
+          },
+          {
+            "url": "https://www.builder.io/blog/agent-skills-rules-commands",
+            "excerpts": [
+              "Jan 21, 2026 \u2014 Agent skills, rules, and commands offer different, strategic context for AI agents. Here's when to use each and how to optimize them for"
+            ],
+            "title": "Agent Skills vs. Rules vs. Commands"
+          },
+          {
+            "url": "https://cursor.com/docs/mcp",
+            "excerpts": [
+              "Connect Cursor to external tools and data sources using Model Context Protocol (MCP). Install servers, configure authentication, and integrate with"
+            ],
+            "title": "Model Context Protocol (MCP) | Cursor Docs"
+          },
+          {
+            "url": "https://sbstjn.com/blog/cursor-skills-rules-agents-best-practices/",
+            "excerpts": [
+              "Apr 30, 2026 \u2014 Cursor recommends Agent Skills as the preferred way to extend agent behaviour \u2014 dynamic context that loads when a task matches a skill's"
+            ],
+            "title": "Best Practices for Cursor Skills, Rules, and Agents"
+          },
+          {
+            "url": "https://cursor.com/docs/skills",
+            "excerpts": [
+              "Extend AI agents with specialized capabilities using Agent Skills, an open standard for packaging reusable knowledge and scripts."
+            ],
+            "title": "Agent Skills | Cursor Docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/agent-setup/cursor/",
+            "excerpts": [
+              "Install Cursor. Download Cursor for macOS, Windows, or Linux from the Cursor downloads page \u2197. For additional information, see the Cursor installation guide \u2197."
+            ],
+            "title": "Cursor + Cloudflare \u00b7 Agent setup docs"
+          },
+          {
+            "url": "https://cursor.com/blog/faire",
+            "excerpts": [
+              "May 26, 2026 \u2014 An agent labels every PR by author, risk, and size, then routes the PR to a tailored code review workflow. The concept of automations has been"
+            ],
+            "title": "Faire doubles PR throughput with Cursor Cloud Agents"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "setup_order_rules_first_skills_second_plugins_and_mcp_third_branching_last",
+        "reasoning": "Assessment notes:\n- The field_answer provides a concrete, multi-step ordering of setup tasks (rules -> skills -> plugins/MCP -> branching last) and includes rationale and a practical checklist. It also references where Cursor 3.10 centralized management exists and that branching matters after agents load context. This aligns with the field_description seeking ordering, structure, and migration guidance for Cursor-based projects.\n- Completeness judgement: True. The answer covers the requested ordering (rules first, then skills, plugins/MCP third, branching last), provides an actionable step-by-step sequence, and mentions related considerations (environments, MCP servers, .cursor files, and environment/setup notes). It also acknowledges implications and a case study, which enhances usefulness for the described dealer site reorganization. While it cites sources implicitly, the core requested ordering and steps are present.\n- Excerpts support: The excerpts provide corroboration on core concepts like managing plugins/skills/MCPs, cloud agent usage, and Cursor setup with Cloudflare integration. They do not strictly enumerate the exact step-by-step order, but they do support the existence and relevance of the components and workflows mentioned in the field_answer (e.g., .cursor/, MCPs, plugins, Cloudflare integration, and agent-driven setups). Therefore, support is present though not exhaustive for every specific claim.\n- Confidence: Moderate to high that the field_answer is correct and practically useful given the provided excerpts.",
+        "citations": [
+          {
+            "url": "https://cursor.com/changelog",
+            "excerpts": [
+              "Jun 30, 2026 \u2014 You can now add and manage plugins, skills, MCPs, subagents, rules, commands, and hooks at the user, team, or workspace level, and even bring"
+            ],
+            "title": "What's New in Cursor \u2014 Latest Updates & Release Notes"
+          },
+          {
+            "url": "https://cursor.com/docs/cloud-agent",
+            "excerpts": [
+              "Run Agent in the cloud for continuous coding assistance."
+            ],
+            "title": "Cloud Agents | Cursor Docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/agent-setup/cursor/",
+            "excerpts": [
+              "Install Cursor. Download Cursor for macOS, Windows, or Linux from the Cursor downloads page \u2197. For additional information, see the Cursor installation guide \u2197."
+            ],
+            "title": "Cursor + Cloudflare \u00b7 Agent setup docs"
+          },
+          {
+            "url": "https://cursor.com/blog/automations",
+            "excerpts": [
+              "Mar 5, 2026 \u2014 We're introducing Cursor Automations to build always-on agents. These agents run on schedules or are triggered by events like a sent Slack"
+            ],
+            "title": "Build agents that run automatically"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches",
+        "reasoning": "Completeness assessment:\n- The field_description asks for comprehensive best-practices on organizing a Cursor IDE/Cloud Agent project, including folder structure, setup order, git branching strategies, reorganizing a messy monorepo, official docs sources, and a concrete target tree with migration steps.\n- The provided field_answer focuses almost entirely on branching and PR workflows, naming conventions, monorepo vs multi-repo stance, and a brief case study. It does not address: (1) folder/file layout recommendations (AGENTS.md, .cursor/rules, .cursor/skills, CLAUDE.md vs README, rules vs skills vs MCP), (2) the correct setup order (rules, skills, plugins, MCP servers, branching) in practical steps, (3) detailed monorepo reorganization guidance for a large static marketing site with assets and various folders, (4) official cursor docs/youtube/blog guidance content in detail, (5) a concrete target tree and migration order for the dealer website template.\n- Therefore, the field_answer does not fully satisfy the field_description requirements and is incomplete, even though it is consistent with some aspects of the excerpts.\n- Excerpts do support the branching/pr workflow themes stated, but they do not validate the missing parts requested in the field description.\n- Overall completeness: false. Supported by excerpts: true.",
+        "citations": [
+          {
+            "url": "https://cursor.com/docs/cloud-agent",
+            "excerpts": [
+              "Run Agent in the cloud for continuous coding assistance."
+            ],
+            "title": "Cloud Agents | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/help/ai-features/background-agents",
+            "excerpts": [
+              "Background agents run coding tasks asynchronously in the cloud while you keep working. Learn how they run code safely and show their work in Cursor."
+            ],
+            "title": "What are background agents?"
+          },
+          {
+            "url": "https://graphite.com/blog/cursor-cloud-agents",
+            "excerpts": [
+              "Mar 3, 2026 \u2014 Just open the Agent tab right in the PR page and tell it what to change. The agent understands your codebase, sees the PR diff, recognizes CI"
+            ],
+            "title": "Introducing Cursor Cloud Agents in Graphite"
+          },
+          {
+            "url": "https://dev.to/thegdsks/cursor-3-ships-parallel-ai-agents-here-is-the-multi-agent-workflow-that-actually-works-2bk8",
+            "excerpts": [
+              "May 26, 2026 \u2014 Git worktrees give each agent its own working directory on a separate branch. The agents are not sharing a working tree, so there are no write"
+            ],
+            "title": "Cursor 3 ships parallel AI agents. Here is the multi- ..."
+          },
+          {
+            "url": "https://cursor.com/blog/automations",
+            "excerpts": [
+              "Mar 5, 2026 \u2014 We're introducing Cursor Automations to build always-on agents. These agents run on schedules or are triggered by events like a sent Slack"
+            ],
+            "title": "Build agents that run automatically"
+          },
+          {
+            "url": "https://cursor.com/blog/faire",
+            "excerpts": [
+              "May 26, 2026 \u2014 An agent labels every PR by author, risk, and size, then routes the PR to a tailored code review workflow. The concept of automations has been"
+            ],
+            "title": "Faire doubles PR throughput with Cursor Cloud Agents"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "field": "rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template",
+        "reasoning": "I assessed the field answer for completeness against the field description. The answer provides a concrete target tree for a dealership template monorepo, rationale for per-app rules and structure, a migration order with phases, and several key decisions aligning with Cursor monorepo guidance and Cloudflare Pages practices. It also mentions AGENTS.md placement, .cursor/rules, and .cursor/skills organization, as well as how to separate functions via apps/, and notes about rules vs skills. While the excerpts list supports such topics (monorepo guidance, Agent Skills, ignore files, middleware, wrangler configuration), they do not map 1:1 to every detailed folder or exact file names in the proposed tree. Nevertheless, the field answer delivers a comprehensive and actionable concrete file tree, migration plan, and rationale that align with the field description requirements (organization, setup order, branching strategy context, and a concrete migration path). Therefore, completeness = true. Supported is true because the answer is generally supported by the excerpts\u2019 topics (monorepos, ignore files, Cursor rules/skills, middleware, Wrangler, Cursor setup guidance).",
+        "citations": [
+          {
+            "url": "https://developers.cloudflare.com/pages/configuration/monorepos/",
+            "excerpts": [
+              "Apr 21, 2026 \u2014 A monorepo is a repository that has multiple subdirectories each containing its own application. Set up You can create multiple projects using the same"
+            ],
+            "title": "Monorepos \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://cursor.com/docs/skills",
+            "excerpts": [
+              "Extend AI agents with specialized capabilities using Agent Skills, an open standard for packaging reusable knowledge and scripts."
+            ],
+            "title": "Agent Skills | Cursor Docs"
+          },
+          {
+            "url": "https://forum.cursor.com/t/finding-skills-rules-in-the-same-repo-above-the-project-root/160263",
+            "excerpts": [
+              "May 11, 2026 \u2014 For monorepos, I'd generally recommend opening Cursor at the repository root rather than at a subdomain or package folder."
+            ],
+            "title": "Finding skills/rules in the same repo above the project root"
+          },
+          {
+            "url": "https://forum.cursor.com/t/cursor-rules-in-monorepos/148274",
+            "excerpts": [],
+            "title": "Cursor Rules in Monorepos - Support / Help - Cursor - Community Forum"
+          },
+          {
+            "url": "https://cursor.com/docs/reference/ignore-file",
+            "excerpts": [
+              "Control which files Cursor can access using .cursorignore and .cursorindexingignore files. Pattern syntax, global ignore, default ignore list,"
+            ],
+            "title": "Ignore File | Cursor Docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/pages/functions/middleware/",
+            "excerpts": [
+              "Apr 21, 2026 \u2014 Middleware is similar to standard Pages Functions but middleware is always defined in a _middleware.js file in your project's /functions"
+            ],
+            "title": "Middleware \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/pages/functions/wrangler-configuration/",
+            "excerpts": [
+              "Jun 25, 2026 \u2014 Pages Functions can be configured two ways, either via the Cloudflare dashboard or the Wrangler configuration file, a file used to customize the development"
+            ],
+            "title": "Configuration \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/agent-setup/cursor/",
+            "excerpts": [
+              "Install Cursor. Download Cursor for macOS, Windows, or Linux from the Cursor downloads page \u2197. For additional information, see the Cursor installation guide \u2197."
+            ],
+            "title": "Cursor + Cloudflare \u00b7 Agent setup docs"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree",
+        "reasoning": "Initial assessment: The fieldAnswer provides a concrete branching strategy tailored for Cursor Cloud Agents, including trunk-based main with optional develop, agent/branches off main, PR workflow labeling, and CODEOWNERS gating. It also justifies preferring a single repo (not multi-repo) for a marketing template and references a case study. The excerpts include sources about: running agents in the cloud and separate branches, git worktrees for parallel agents, agents reviewing PRs, and PR labeling workflows. This aligns with the field_answer components. Therefore, the answer appears complete with practical guidance and justification, and is supported by the excerpts.",
+        "citations": [
+          {
+            "url": "https://cursor.com/docs/cloud-agent",
+            "excerpts": [
+              "Run Agent in the cloud for continuous coding assistance."
+            ],
+            "title": "Cloud Agents | Cursor Docs"
+          },
+          {
+            "url": "https://dev.to/thegdsks/cursor-3-ships-parallel-ai-agents-here-is-the-multi-agent-workflow-that-actually-works-2bk8",
+            "excerpts": [
+              "May 26, 2026 \u2014 Git worktrees give each agent its own working directory on a separate branch. The agents are not sharing a working tree, so there are no write"
+            ],
+            "title": "Cursor 3 ships parallel AI agents. Here is the multi- ..."
+          },
+          {
+            "url": "https://graphite.com/blog/cursor-cloud-agents",
+            "excerpts": [
+              "Mar 3, 2026 \u2014 Just open the Agent tab right in the PR page and tell it what to change. The agent understands your codebase, sees the PR diff, recognizes CI"
+            ],
+            "title": "Introducing Cursor Cloud Agents in Graphite"
+          },
+          {
+            "url": "https://cursor.com/blog/faire",
+            "excerpts": [
+              "May 26, 2026 \u2014 An agent labels every PR by author, risk, and size, then routes the PR to a tailored code review workflow. The concept of automations has been"
+            ],
+            "title": "Faire doubles PR throughput with Cursor Cloud Agents"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust",
+        "reasoning": "Reasoning: The user asked for trustworthy official/docs/forum/community resources guidance. The field answer provides a structured trust-tier system (Tier 1/2/3) mapping to official Cursor docs, changelog, blog, forum threads, and high-quality 2025-2026 community guides. It also discusses mechanisms like AGENTS.md being the canonical agent-facing doc, nearest-file-wins principle, and patterns converging in 2026 docs. The provided excerpts include items about AGENTS.md, rules, skills, MCP, monorepos, and Cursor blog/changelog, which support the assertions about sources and practices. Completeness hinges on whether this covers the requested scope: (1) official docs, forum posts, and community resources; (2) trust tiers; (3) when to cite; (4) mechanisms and implications; (5) cross-cutting insights about 2026 docs; (6) migration/target guidance. The answer addresses all these aspects at a high level, cites sources in a tiered scheme, and aligns with excerpts that discuss AGENTS.md, monorepo guidance, and authoritative sources. Therefore, completeness appears true and the content is well-supported by excerpts. Confidence in the field answer is moderate to high given the provided excerpts align with the claims, though exact URLs in the field answer are schematic rather than precise links.",
+        "citations": [
+          {
+            "url": "https://cursor.com/docs/rules",
+            "excerpts": [
+              "Configure persistent instructions with Project, Team, and User Rules, plus AGENTS.md. Learn best practices for effective coding guidelines."
+            ],
+            "title": "Rules | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/docs/skills",
+            "excerpts": [
+              "Extend AI agents with specialized capabilities using Agent Skills, an open standard for packaging reusable knowledge and scripts."
+            ],
+            "title": "Agent Skills | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/docs/mcp",
+            "excerpts": [
+              "Connect Cursor to external tools and data sources using Model Context Protocol (MCP). Install servers, configure authentication, and integrate with"
+            ],
+            "title": "Model Context Protocol (MCP) | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/docs/subagents",
+            "excerpts": [
+              "Create specialized AI subagents for task-specific workflows and context management."
+            ],
+            "title": "Subagents | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/docs/cloud-agent",
+            "excerpts": [
+              "Run Agent in the cloud for continuous coding assistance."
+            ],
+            "title": "Cloud Agents | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/docs/plugins",
+            "excerpts": [
+              "Browse, install, and manage plugins from the Cursor Marketplace."
+            ],
+            "title": "Plugins | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/docs/reference/ignore-file",
+            "excerpts": [
+              "Control which files Cursor can access using .cursorignore and .cursorindexingignore files. Pattern syntax, global ignore, default ignore list,"
+            ],
+            "title": "Ignore File | Cursor Docs"
+          },
+          {
+            "url": "https://cursor.com/changelog",
+            "excerpts": [
+              "Jun 30, 2026 \u2014 You can now add and manage plugins, skills, MCPs, subagents, rules, commands, and hooks at the user, team, or workspace level, and even bring"
+            ],
+            "title": "What's New in Cursor \u2014 Latest Updates & Release Notes"
+          },
+          {
+            "url": "https://cursor.com/blog/faire",
+            "excerpts": [
+              "May 26, 2026 \u2014 An agent labels every PR by author, risk, and size, then routes the PR to a tailored code review workflow. The concept of automations has been"
+            ],
+            "title": "Faire doubles PR throughput with Cursor Cloud Agents"
+          },
+          {
+            "url": "https://cursor.com/blog/automations",
+            "excerpts": [
+              "Mar 5, 2026 \u2014 We're introducing Cursor Automations to build always-on agents. These agents run on schedules or are triggered by events like a sent Slack"
+            ],
+            "title": "Build agents that run automatically"
+          },
+          {
+            "url": "https://cursor.com/blog/linear",
+            "excerpts": [
+              "Aug 21, 2025 \u2014 Trigger agents directly from Linear: Delegate an issue to @Cursor or mention @Cursor in a comment to launch an agent that will work on the task."
+            ],
+            "title": "Bringing the Cursor Agent to Linear"
+          },
+          {
+            "url": "https://forum.cursor.com/t/cursor-rules-in-monorepos/148274",
+            "excerpts": [],
+            "title": "Cursor Rules in Monorepos - Support / Help - Cursor - Community Forum"
+          },
+          {
+            "url": "https://forum.cursor.com/t/finding-skills-rules-in-the-same-repo-above-the-project-root/160263",
+            "excerpts": [
+              "May 11, 2026 \u2014 For monorepos, I'd generally recommend opening Cursor at the repository root rather than at a subdomain or package folder."
+            ],
+            "title": "Finding skills/rules in the same repo above the project root"
+          },
+          {
+            "url": "https://forum.cursor.com/t/project-specific-mcp-server/47511",
+            "excerpts": [
+              "Feb 3, 2025 \u2014 I have some MCP Server tools that are project specific. It would be great to be able to manage these at a global vs project level."
+            ],
+            "title": "Project specific MCP Server - Feature Requests"
+          },
+          {
+            "url": "https://agents.md/",
+            "excerpts": [
+              "AGENTS.md is a simple, open format for guiding coding agents, used by over 60k open-source projects. Think of it as a README for agents."
+            ],
+            "title": "AGENTS.md"
+          },
+          {
+            "url": "https://www.morphllm.com/agents-md-guide",
+            "excerpts": [
+              "Jun 9, 2026 \u2014 The AGENTS.md spec is plain Markdown with no required fields. Recommended sections: overview, build/test commands, code style, testing,"
+            ],
+            "title": "AGENTS.md Spec (2026): Recommended Sections + ..."
+          },
+          {
+            "url": "https://www.builder.io/blog/agent-skills-rules-commands",
+            "excerpts": [
+              "Jan 21, 2026 \u2014 Agent skills, rules, and commands offer different, strategic context for AI agents. Here's when to use each and how to optimize them for"
+            ],
+            "title": "Agent Skills vs. Rules vs. Commands"
+          },
+          {
+            "url": "https://sbstjn.com/blog/cursor-skills-rules-agents-best-practices/",
+            "excerpts": [
+              "Apr 30, 2026 \u2014 Cursor recommends Agent Skills as the preferred way to extend agent behaviour \u2014 dynamic context that loads when a task matches a skill's"
+            ],
+            "title": "Best Practices for Cursor Skills, Rules, and Agents"
+          },
+          {
+            "url": "https://www.agensi.io/learn/cursor-rules-vs-skill-md-complete-guide",
+            "excerpts": [
+              "Apr 23, 2026 \u2014 Cursor has two systems for customizing AI behavior: .cursorrules files and SKILL.md skills. They solve different problems and work best together"
+            ],
+            "title": "Cursor Rules vs SKILL.md Skills: Which Should You Use?"
+          },
+          {
+            "url": "https://kirill-markin.com/articles/cursor-ide-rules-for-ai/",
+            "excerpts": [
+              "Apr 19, 2025 \u2014 I'm sharing my base-level cursor project rules here - the global settings I use in Cursor IDE. These rules form the foundation for all my development work."
+            ],
+            "title": "Cursor IDE Rules for AI: Guidelines for Specialized AI ..."
+          },
+          {
+            "url": "https://dev.to/nedcodes/cursor-rules-vs-agent-skills-i-tested-both-heres-when-each-one-actually-works-1ld",
+            "excerpts": [
+              "Feb 21, 2026 \u2014 When to use which. Based on these results: Use rules when: You want something enforced on every task (coding style, naming conventions,"
+            ],
+            "title": "Cursor Rules vs Agent Skills: I Tested Both. Here's When ..."
+          },
+          {
+            "url": "https://www.prompthub.us/blog/top-cursor-rules-for-coding-agents",
+            "excerpts": [
+              "Oct 23, 2025 \u2014 We analyzed over 100 top Cursor Rule files to find the best practices for AI-assisted coding, including error handling, security,"
+            ],
+            "title": "Top Cursor Rules for Coding Agents"
+          },
+          {
+            "url": "https://developers.cloudflare.com/pages/configuration/monorepos/",
+            "excerpts": [
+              "Apr 21, 2026 \u2014 A monorepo is a repository that has multiple subdirectories each containing its own application. Set up You can create multiple projects using the same"
+            ],
+            "title": "Monorepos \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/pages/functions/wrangler-configuration/",
+            "excerpts": [
+              "Jun 25, 2026 \u2014 Pages Functions can be configured two ways, either via the Cloudflare dashboard or the Wrangler configuration file, a file used to customize the development"
+            ],
+            "title": "Configuration \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/pages/functions/",
+            "excerpts": [
+              "Apr 21, 2026 \u2014 With Functions, you can introduce application aspects such as authenticating, handling form submissions, or working with middleware. Workers"
+            ],
+            "title": "Functions \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/pages/functions/middleware/",
+            "excerpts": [
+              "Apr 21, 2026 \u2014 Middleware is similar to standard Pages Functions but middleware is always defined in a _middleware.js file in your project's /functions"
+            ],
+            "title": "Middleware \u00b7 Cloudflare Pages docs"
+          },
+          {
+            "url": "https://developers.cloudflare.com/agent-setup/cursor/",
+            "excerpts": [
+              "Install Cursor. Download Cursor for macOS, Windows, or Linux from the Cursor downloads page \u2197. For additional information, see the Cursor installation guide \u2197."
+            ],
+            "title": "Cursor + Cloudflare \u00b7 Agent setup docs"
+          }
+        ],
+        "confidence": "high"
+      },
+      {
+        "field": "synthesis_putting_it_all_together_for_the_dealership_template",
+        "reasoning": "Assessment rationale:\n- The field_answer provides a comprehensive synthesis for organizing a Cursor IDE / Cursor Cloud Agent project, including principles, mechanisms, actions, comparative analysis, trade-offs, inflection points, and failure modes tailored to the dealership template. It addresses multiple aspects requested in the query (folder structure, setup order, branching strategies, monorepo organization, official sources, and migration guidance).\n- The field_description is not provided here, but given the depth and breadth of the answer, it appears to cover the expected topics implied by the user query.\n- Excerpt evidence is limited to a single changelog item about multi-level management of plugins, skills, MCPs, etc., which only partially supports the detailed recommendations in the field_answer. Therefore, while the answer is thorough, its support from excerpts is limited.\n- Conclusion: completeness is true (the answer is comprehensive with respect to the user query), but supported is false (excerpts only partially back the claims).\n",
+        "citations": [
+          {
+            "url": "https://forum.cursor.com/t/cursor-rules-in-monorepos/148274",
+            "excerpts": [],
+            "title": "Cursor Rules in Monorepos - Support / Help - Cursor - Community Forum"
+          },
+          {
+            "url": "https://cursor.com/changelog",
+            "excerpts": [
+              "Jun 30, 2026 \u2014 You can now add and manage plugins, skills, MCPs, subagents, rules, commands, and hooks at the user, team, or workspace level, and even bring"
+            ],
+            "title": "What's New in Cursor \u2014 Latest Updates & Release Notes"
+          }
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "content": {
+      "executive_summary": "- **Rules as the always-on layer, skills as the on-demand layer**: The Cursor docs explicitly tell you that rules with `alwaysApply: true` apply to every session, while skills are \"portable, version-controlled package[s] that teach agents how to perform domain-specific tasks\" and \"load resources on demand\" ([executive_summary[0]] [10], [executive_summary[1]] [1]) -> put repo-wide guardrails in `.cursor/rules/*.mdc` with `alwaysApply: true`, and put deep, scoped procedures in `.cursor/skills/<name>/SKILL.md`.\n\n- **AGENTS.md is the cross-tool README-for-agents, not a replacement for README**: AGENTS.md is read by 30+ agents across 60,000+ repos and is capped at 32 KiB by Codex; it is meant for \"extra, sometimes detailed context coding agents need\" that would \"clutter a README\" ([executive_summary[2]] [2], [executive_summary[3]] [4]) -> keep your human README lean, push build commands, conventions, and Playbook context into AGENTS.md, and never put tracking pixels or campaign copy there.\n\n- **Monorepo mode means \"open Cursor at the repo root\"**: The Cursor forum consensus from staff and senior users is unambiguous: \"For monorepos, I'd generally recommend opening Cursor at the repository root rather than at a subdomain or package folder\" ([executive_summary[4]] [53]) -> your dealership template must be restructured so the site, dashboard, functions, and campaigns share one root, with one AGENTS.md and per-domain rules nested under each subpackage.\n\n- **Cloud Agents already encode the branching model**: Cursor Cloud Agents \"clone your repo from GitHub or GitLab and work on a separate branch, then push changes to your repo for handoff\" and \"produce merge-ready PRs with artifacts to demo their changes\" ([executive_summary[5]] [56]) -> standardize on `agent/<task-id>` branches off `main`, let Cursor handle PR creation, and gate merges with a human review (plus the optional BugBot automation).\n\n- **Asset flooding kills agent reliability**: Cursor's `.cursorignore` and `.cursorindexingignore` use `.gitignore` syntax and default-ignore binaries like `*.jpg`, `*.png`, `*.mp4`, `*.pdf`, plus `node_modules/`, `.git/`, `.env*` ([executive_summary[6]] [75]) -> move every product image, campaign hero, and video into `/public/assets/` or `/cdn/` and add explicit ignore patterns, otherwise the agent drowns in binary noise on every edit.\n\n- **The dealership template is a Cloudflare Pages monorepo, not a single site**: Cloudflare Pages is explicitly documented as supporting \"multiple Cloudflare Pages projects from a single monorepo repository\" via `wrangler.toml` with `pages_build_output_dir` ([executive_summary[7]] [7], [executive_summary[8]] [71]) -> split the repo into `apps/site/`, `apps/dashboard/`, `apps/functions-api/` and ship each as its own Pages project with one shared functions package, not a single jumbled root.\n\n- **The cursor.directory / Marketplace is the new plugin surface**: Cursor 3.10 (Jun 30, 2026) extended team marketplaces to ship \"plugins, skills, MCPs, subagents, rules, commands, and hooks\" across the IDE, CLI, and Cloud Agents ([executive_summary[9]] [15]) -> install the official Cloudflare plugin (`/add-plugin cloudflare`) before writing any rules, because it ships Cloudflare Skills and MCP servers that already know Pages, KV, D1, and Wrangler.\n\n- **Cloudflare + Cursor has a first-party integration**: Cloudflare ships a \"Cursor + Cloudflare\" agent setup page that documents installing the plugin, OAuth for the API MCP server, and adding `@wrangler.jsonc` to Composer prompts so the agent sees current bindings ([executive_summary[10]] [80]) -> wire this up on day one, otherwise agents will guess at bindings and KV/D1 IDs.",
+      "agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer": "The 2026 documentation landscape has converged on a clean four-file mental model, and the dealership template currently violates three of the four. The open-standard spec describes AGENTS.md as \"a README for agents: a dedicated, predictable place to provide the context and instructions to help AI coding agents work on your project\" ([agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer[0]] [2]). The Morphllm 2026 guide catalogs the differences in a comparison table: AGENTS.md is cross-tool (30+ agents), CLAUDE.md is Claude Code-only and supports `@imports`, `.cursorrules` is Cursor-only with no size cap, and `copilot-instructions.md` is GitHub Copilot-only ([agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer[1]] [4]). Cursor itself reads AGENTS.md from the project root and from subdirectories, with \"the closest AGENTS.md to the edited file wins; explicit user chat prompts override everything\" ([agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer[2]] [1]).\n\n| File | Scope | Format | Hierarchy | Reads by | Cap | Best for |\n|------|-------|--------|-----------|----------|-----|----------|\n| `README.md` | Humans | Markdown | Single, repo root | GitHub UI | None | Onboarding, brand, screenshots |\n| `AGENTS.md` | All agents | Markdown | Nearest-file wins | 30+ tools | 32 KiB (Codex) | Build/test commands, conventions |\n| `CLAUDE.md` | Claude Code | Markdown + `@imports` | Global + project + subdir | Claude Code | ~200 lines | Anthropic-specific tools |\n| `.cursor/rules/*.mdc` | Cursor only | MDC w/ frontmatter | Stage-1 glob, Stage-2 desc | Cursor | None | Repo-wide guardrails |\n\n**Observation -> mechanism -> implication.** *Observation:* Cursor staff and the spec both call out the \"nearest file wins\" behavior, and the Morphllm guide quantifies the 32 KiB cap that Codex silently truncates. *Mechanism:* Cursor evaluates a rule file twice: stage 1 uses `globs` or `alwaysApply` to inject it into context, stage 2 uses `description` to decide whether the agent should follow it ([agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer[3]] [51]). *Implication:* in your dealership repo, put the brand-agnostic build/test/security facts in root `AGENTS.md` (so Cursor, Cloud Agents, and any future tool can read it), then keep a thin `.cursor/rules/00-project-overview.mdc` with `alwaysApply: true` that points at `AGENTS.md` rather than duplicating its content. *Recommendation:* delete the `DEALERSHIP_CONVERSION_PLAYBOOK.md` from the repo root (or rename it to `docs/PLAYBOOK.md` and link it from AGENTS.md) so the agent doesn't load 50+ pages of marketing copy into every code edit.\n\n**Case study: kirill-markin's three-level rule hierarchy.** An experienced Cursor user lays out the same pattern the docs recommend: \"Rules for AI in Cursor IDE settings\" (global) -> \"`.cursor/index.mdc` file with Rule Type 'Always'\" (repo-wide) -> \"`.cursor/rules/*.mdc` files\" that only activate when \"AI tackles tasks relevant to their description\" ([agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer[4]] [83]). The repo `index.mdc` \"works like a README.md specifically designed for AI assistants\" with \"context about the project's purpose, architecture, and coding patterns\", while the dynamic rules only fire \"to reduce token usage by only activating relevant cursor project rules when needed.\" This is the same lesson Cursor's own docs encode with `alwaysApply` vs `description`.",
+      "rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer": "Cursor 3.10 (Jun 30, 2026) shipped a unified Customize page that treats \"plugins, skills, MCPs, subagents, rules, commands, and hooks\" as first-class peers ([rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer[0]] [15]), but each one has a different role. The Builder.io comparison crystallizes the mental model: rules are \"unchanging. They apply every single time, no exceptions\"; commands \"represent your explicit intent. You type `/command` because you want to take the wheel\"; skills are \"optional expertise. The agent pulls these off the shelf only when the specific task demands it\" ([rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer[1]] [13]). The Cursor docs add a fourth dimension: MCP servers extend the agent with tools (\"Connect Cursor to external tools and data sources using Model Context Protocol\") ([rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer[2]] [30]).\n\n| Mechanism | Triggered by | Cost model | Anti-pattern | Example |\n|-----------|--------------|------------|-------------|---------|\n| **Rule** (`.cursor/rules/*.mdc`) | `alwaysApply` or glob match | Always paid if injected | Stuffing tutorials into rules | `no-react-at-root.mdc` enforcing vanilla HTML |\n| **Skill** (`.cursor/skills/<name>/SKILL.md`) | `description` matches task | Paid when loaded | Mirroring rule content in skill | `cloudflare-pages-deploy/SKILL.md` |\n| **Command** (slash command) | User types `/x` | Paid when invoked | Auto-running on every chat | `/preview-deploy` |\n| **MCP** (`.cursor/mcp.json`) | Agent calls a tool | Paid per call | Exposing 50 tools for one project | Cloudflare Code Mode MCP |\n| **Subagent** (`.cursor/agents/*.md`) | Parent agent delegates | Fresh context window | Re-implementing skills as subagents | `verifier` runs tests in isolation |\n\n**Observation -> mechanism -> implication.** *Observation:* the sbstjn best-practices post pairs rules and skills by \"decid[ing] when the surface is in play\" (rule) and \"what good looks like at full depth\" (skill) ([rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer[3]] [38]). *Mechanism:* rules inject into every context window once a glob matches; skills only attach files like `references/` and `assets/` \"progressively - only when needed\" ([rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer[4]] [10]). *Implication:* the dealership repo should keep a small `rules/` directory with repo-wide guardrails (e.g., \"no React at root\", \"all forms POST to GoHighLevel webhook X\") and a `skills/` directory with domain-specific procedures (e.g., \"wrangler deploy\", \"ghl-webhook-handler\", \"meta-pixel-event-debugger\"). *Recommendation:* put the Cloudflare plugin first - it ships Cloudflare Skills and MCP servers out of the box ([rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer[5]] [80]).\n\n**Case study: Faire's 2x PR throughput via Cloud Agents + automations.** The Cursor blog post on Faire (May 26, 2026) shows how a production team stitches together Cloud Agents, Automations, and a tailored code review workflow. Faire uses \"an agent [that] labels every PR by author, risk, and size, then routes the PR to a tailored code review workflow\" ([rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer[6]] [21]). This is exactly the layering you want: a *rule* enforces PR conventions, a *skill* knows the project's review checklist, a *subagent* runs the actual review in isolation, and an *MCP server* (Code Mode) gives the reviewer access to Linear, Sentry, and the repo. The lesson: pick one mechanism per layer, never duplicate.",
+      "setup_order_rules_first_skills_second_plugins_and_mcp_third_branching_last": "There is a real ordering effect: rules created before skills will be referenced by skills, plugins ship pre-built skills/MCPs that should anchor your setup, and branching only matters once the agent has enough context to push a useful PR. Cursor 3.10 made plugins, skills, MCPs, subagents, rules, commands, and hooks all centrally manageable, with team marketplaces extending MCP servers \"across cloud agents, the agents window, IDE, and CLI\" ([setup_order_rules_first_skills_second_plugins_and_mcp_third_branching_last[0]] [15]).\n\n| Step | Action | Verification | If you skip it |\n|------|--------|--------------|----------------|\n| 1 | Install Cursor + sign in to GitHub | `cursor --version` | n/a |\n| 2 | Open the repo at the ROOT (monorepo) | Cursor shows `.cursor/` | Agents lose parent context |\n| 3 | Write `AGENTS.md` (20-30 lines) | `wc -c AGENTS.md` < 32 KiB | Cross-tool agents miss build steps |\n| 4 | Add `.cursorignore` for assets/binaries | File tree shows :prohibited: | Agent context floods with images |\n| 5 | Write `.cursor/rules/*.mdc` files | Lint frontmatter | Conventions get re-explained every chat |\n| 6 | Install the Cloudflare plugin | `/add-plugin cloudflare` | Agents guess at Wrangler syntax |\n| 7 | Add MCP servers in `.cursor/mcp.json` | Settings > Tools & MCP | No external tool access |\n| 8 | Add domain skills under `.cursor/skills/` | `description` is grep-able | Deep context never loaded |\n| 9 | Create `main` + `develop` branches | GitHub default branch set | Cloud Agents branch off wrong base |\n| 10 | Set up Cloud Agent environment | `.cursor/environment.json` | Cold-start per task |\n\n**Observation -> mechanism -> implication.** *Observation:* the deployhq 2026 guide documents that Cursor Cloud Agent environments can be configured via \"agent-led setup, a saved snapshot, or a Dockerfile in `.cursor/environment.json`\" ([setup_order_rules_first_skills_second_plugins_and_mcp_third_branching_last[1]] [56]). *Mechanism:* when a Cloud Agent starts, it scans for `.cursor/` and loads every `alwaysApply` rule before touching code; if your MCP servers require an OAuth dance, the agent blocks until you authorize ([setup_order_rules_first_skills_second_plugins_and_mcp_third_branching_last[2]] [80]). *Implication:* by step 6, the agent should be able to fire a \"preview deploy\" command end-to-end without human help. *Recommendation:* put `.cursor/environment.json` and `.cursor/mcp.json` in git from day one, but keep secrets in `wrangler.jsonc` + Cloudflare dashboard, not in plaintext TOML.\n\n**Case study: Rippling's cron-style automations.** The Cursor Automations blog (Mar 5, 2026) describes how Rippling \"extended their use of automations to handle tasks like incident triage, weekly status reports, on-call handoff, and more\" with a \"cron agent [that] runs every two hours\" aggregating \"meeting notes, action items, and Loom links from Slack\" plus \"GitHub PRs, Jira issues, and Slack mentions\" ([setup_order_rules_first_skills_second_plugins_and_mcp_third_branching_last[3]] [47]). The lesson: setup order matters because automations can only act on context that was already loaded; if rules/skills/MCPs aren't in place, the cron agent will run blind.",
+      "branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches": "Cursor Cloud Agents \"clone your repo from GitHub or GitLab and work on a separate branch, then push changes to your repo for handoff\" and \"produce merge-ready PRs with artifacts to demo their changes\" ([branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches[0]] [56]). Background Agents (now synonymous with Cloud Agents in Cursor's terminology) \"are coding agents that typically run for a very long time. In practice, that means moving a task from your local device to the cloud, where the agent takes it from start to finish without interruption and reports back with proof that the work is done\" ([branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches[1]] [58]). The Graphite integration (Mar 3, 2026) lets you \"create PRs through the Agents tab in Graphite\" and \"Chat with agents in the PR page\" with the agent \"understand[ing] your codebase, see[ing] the PR diff, recogniz[ing] CI\" ([branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches[2]] [24]).\n\n**Naming convention that works.** Use `<type>/<scope>-<id>` where `type` is `agent|cloud|fix|feat|chore`, `scope` is one of `site|dashboard|functions|campaigns|playbook`, and `id` is the Linear/issue key. Example: `cloud/site-fix-hero-cta-DEAL-142`. The dev.to multi-agent guide advises using \"git worktrees\" so each parallel agent has its own working tree ([branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches[3]] [23]).\n\n**Base branch and PR workflow.** Always branch off `main`, never off a feature branch. Cloud Agents clone from the default branch, so if `main` is protected and up to date, the agent's PR will be a clean fast-forward or a small conflict. The Cursor Automations blog notes that \"Agentic codeowners\" trigger \"on every PR open or push\" to classify risk based on infrastructure impact ([branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches[4]] [47]). For the dealership template, set the GitHub default branch to `main`, require PRs to pass Wrangler dry-run, and let BugBot label every PR by risk before a human reviewer ever sees it.\n\n**Monorepo vs multi-repo for agents.** The Cursor Cloud Agent docs explicitly support \"multi-repo environments\" where the agent can \"inspect the full workspace, make coordinated changes, and open pull requests in the repos it changes\" ([branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches[0]] [56]). For the dealership template, a single monorepo is the right call: campaigns, dashboard, and site share types and styles, and splitting them creates coordination tax.\n\n**Case study: Faire's 2x PR throughput.** Faire ran an \"in-house background agent system\" before adopting Cursor, and within months hit a \"2x Increase in weekly PR throughput\" ([branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches[5]] [21]). The playbook they used: short-lived agent branches, a Dockerfile-based environment, build previews generated by the agent, and an automation that \"labels every PR by author, risk, and size, then routes the PR to a tailored code review workflow.\" Replicate exactly this for the dealership repo - the parallel gain comes from the labeling/routing layer, not the agent itself.",
+      "rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template": "The dealership marketing monorepo currently mixes at the repo root: many HTML pages, JS/CSS, large product images, Cloudflare Pages functions/, agency-starter/ template, dashboard/ analytics SOPs and GHL sync, scripts/, campaign landing folders (redrivervalleyfair, hot-tub-offer, etc.), and a DEALERSHIP_CONVERSION_PLAYBOOK.md. The migration target follows the Cloudflare Pages monorepo doc's pattern of \"multiple projects using the same repository\" ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[0]] [7]) and the Cursor skill layout \"Each topic is organized in a directory under `skills/<name>/` containing a `SKILL.md` file\" ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[1]] [10]).\n\n**Recommended target tree.**\n\n```\ndealership-template/\n|-- AGENTS.md                       # 20-30 lines: build, test, deploy, conventions\n|-- README.md                       # Human-facing brand/marketing\n|-- CLAUDE.md                       # Empty stub: only if team also uses Claude Code\n|-- .cursorignore                   # Exclude /assets/, /cdn/, /images/raw/\n|-- .cursorindexingignore           # Inherits .gitignore, plus binary defaults\n|-- .gitignore\n|-- wrangler.toml                   # Default Cloudflare Pages project (site)\n|-- package.json                    # Root: shared devDeps (wrangler, prettier)\n|-- pnpm-workspace.yaml             # pnpm workspaces (apps/* and packages/*)\n|-- apps/\n|   |-- site/\n|   |   |-- AGENTS.md               # Site-specific context\n|   |   |-- wrangler.toml           # Site-specific Pages config\n|   |   |-- index.html              # Landing\n|   |   |-- about.html, contact.html, inventory.html, ...\n|   |   |-- campaigns/\n|   |   |   |-- redrivervalleyfair/\n|   |   |   |   |-- index.html\n|   |   |   |   |-- assets/         # Per-campaign images (kept in repo for build)\n|   |   |   |-- hot-tub-offer/\n|   |   |       |-- index.html\n|   |   |-- assets/                 # Static site-wide images\n|   |   |-- css/, js/, fonts/\n|   |   `-- .cursor/\n|   |       |-- rules/\n|   |       |   |-- 00-site-no-react.mdc       # alwaysApply: true\n|   |       |   |-- 01-seo-meta-required.mdc   # globs: [\"apps/site/**/*.html\"]\n|   |       |   `-- 02-ghl-form-pattern.mdc    # globs: [\"apps/site/**/*.html\"]\n|   |       `-- skills/\n|   |           |-- new-landing-page/\n|   |           |   |-- SKILL.md\n|   |           |   `-- references/landing-template.md\n|   |           `-- meta-pixel-debug/\n|   |               `-- SKILL.md\n|   |\n|   |-- dashboard/\n|   |   |-- AGENTS.md               # Analytics SOPs context\n|   |   |-- package.json\n|   |   |-- src/\n|   |   |-- analytics-sops.md       # Was dashboard/ SOPs\n|   |   |-- ghl-sync.md             # Was dashboard/ GHL sync notes\n|   |   `-- .cursor/\n|   |       `-- rules/\n|   |           |-- 00-dashboard-conventions.mdc\n|   |           `-- 01-ghl-sync-protocol.mdc\n|   |\n|   `-- functions-api/              # Cloudflare Pages functions\n|       |-- AGENTS.md\n|       |-- wrangler.toml\n|       |-- functions/\n|       |   |-- _middleware.js      # CORS, GA4/Meta pixel proxy\n|       |   |-- api/\n|       |   |   |-- lead.js         # POST -> GoHighLevel webhook\n|       |   |   |-- tracking.js     # Server-side GA4/Meta events\n|       |   |   `-- _routes.json    # If needed for explicit routing\n|       |   `-- README.md\n|       `-- .cursor/\n|           |-- mcp.json            # Cloudflare Code Mode MCP (per-project)\n|           |-- environment.json    # Dockerfile for Cloud Agent env\n|           `-- skills/\n|               |-- wrangler-deploy/SKILL.md\n|               `-- ghl-webhook-handler/SKILL.md\n|\n|-- packages/\n|   |-- shared-assets/              # Logos, fonts reused across apps\n|   |   `-- index.js\n|   |-- tracking-pixel/             # Shared Meta/GA4 pixel helper\n|       `-- src/\n|\n|-- docs/\n|   |-- PLAYBOOK.md                 # Was DEALERSHIP_CONVERSION_PLAYBOOK.md\n|   |-- ARCHITECTURE.md\n|   `-- AGENT-WORKFLOWS.md\n|\n|-- scripts/\n|   |-- build.sh\n|   |-- deploy-preview.sh\n|   `-- ghl-sync.sh\n|\n`-- .github/\n    |-- workflows/\n    |   |-- ci.yml                  # Wrangler dry-run, html-validate, link-check\n    |   `-- deploy-preview.yml\n    `-- CODEOWNERS                  # Agents won't override humans on infra\n```\n\n**Key decisions and why.**\n\n1. **One root, one `AGENTS.md`, nested AGENTS.md per app.** This matches Cursor's \"nearest file wins\" rule and the forum advice to \"open the monorepo root in Cursor\" and \"add package-specific or domain-specific rules inside the relevant subfolders\" ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[2]] [53]).\n\n2. **Per-app `.cursor/rules/` rather than one global file.** deanrie on the Cursor forum warns that nested `.cursor/rules` should \"use a relative path, or don't specify globs at all\" because multi-root workspaces have unreliable globs ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[3]] [51]). Keeping rules next to the code they govern avoids that ambiguity.\n\n3. **`apps/site/` keeps its assets, but `.cursorignore` blocks them from agent context.** Cursor's ignore file defaults already cover `*.jpg`, `*.png`, `*.gif`, `*.mp4`, `*.webp` ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[4]] [75]); explicitly add `/apps/site/assets/`, `/apps/site/campaigns/*/assets/`, and `/cdn/` so large binaries never enter context.\n\n4. **`functions/` lives under `apps/functions-api/` so Cloudflare Pages sees it as a single project.** The Pages Functions docs describe middleware as \"always defined in a `_middleware.js` file in your project's /functions\" ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[5]] [70]); the wrangler config then sets `pages_build_output_dir = \"./dist\"` for the static site plus a separate Pages project for the API ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[6]] [71]).\n\n5. **The Playbook moves from the repo root to `docs/PLAYBOOK.md`.** Cursor reads AGENTS.md and rules eagerly; if the Playbook sits at the root, it will be loaded on every chat and waste tokens. Keeping it under `docs/` means the agent only loads it when a rule or skill's `description` matches.\n\n6. **The Cloudflare plugin ships pre-built.** Install it with `/add-plugin cloudflare`, which \"installs Cloudflare Skills and registers the Cloudflare MCP servers\" ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[7]] [80]). You still keep your own per-project `.cursor/skills/wrangler-deploy/SKILL.md` for project-specific deploy steps.\n\n**Migration order (concrete, one PR at a time).**\n\n| Phase | PR | What moves | Why this order |\n|-------|----|-----------| --------------|\n| 0 | bootstrap | Create root `AGENTS.md`, `.cursorignore`, empty `.cursor/` | Establishes context before any other change |\n| 1 | move-functions | `functions/` -> `apps/functions-api/functions/` | Cloudflare Pages expects functions in a stable location |\n| 2 | wrangler-split | Add `apps/site/wrangler.toml`, root `wrangler.toml` becomes a marker | Enables two-project Pages deploy |\n| 3 | move-dashboard | `dashboard/` -> `apps/dashboard/`, add its AGENTS.md | Keeps analytics SOPs out of site code |\n| 4 | move-campaigns | Each campaign folder -> `apps/site/campaigns/<name>/` | Site must compile before campaigns break |\n| 5 | move-assets | Large images -> `apps/site/assets/`, add ignore patterns | Reduces agent context noise |\n| 6 | move-playbook | `DEALERSHIP_CONVERSION_PLAYBOOK.md` -> `docs/PLAYBOOK.md` | Removes 50+ pages from default context |\n| 7 | move-scripts | `scripts/` stays at root (shared across apps) | No change needed |\n| 8 | add-rules | Write the 6 rule files listed above | Rules activate *after* the tree is stable |\n| 9 | add-skills | Write the 4 SKILL.md files listed above | Skills layer on top of stable conventions |\n| 10 | add-cloud-agent-env | Commit `.cursor/environment.json` | Enables Cloud Agents to spin up the repo |\n| 11 | wire-github | Add CODEOWNERS, default branch = `main`, branch protection | Agents push PRs, humans merge |\n\n**Observation -> mechanism -> implication.** *Observation:* each migration phase is a separate PR with its own diff, so the agent can re-index incrementally. *Mechanism:* Cursor's `.cursorindexingignore` \"automatically inherits all patterns from your `.gitignore` files\" ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[4]] [75]), and Cloudflare Pages \"supports apps with more complex setups\" via separate `wrangler.toml` per project ([rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template[0]] [7]). *Implication:* by phase 10, your agent can be told \"fix the broken CTA on the hot-tub offer page\" and it will branch `cloud/site-fix-cta-HOTTUB-88` off `main`, edit only `apps/site/campaigns/hot-tub-offer/index.html`, and open a PR - all without seeing the 8 MB of dealer photos in context.",
+      "branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree": "The Cursor Cloud Agent docs are explicit that the agent \"clone[s] your repo from GitHub or GitLab and work[s] on a separate branch, then push[es] changes to your repo for handoff\" ([branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree[0]] [56]). The dev.to Cursor 3 guide adds operational detail: use \"git worktrees\" so \"each parallel agent has its own working tree\" to avoid conflicts ([branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree[1]] [23]). Graphite's integration note that \"agents work alongside your team\" and \"understand the codebase, see the PR diff, recognize CI\" ([branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree[2]] [24]) closes the loop.\n\n**Trunk-based with agent branches (recommended for this dealership template).**\n- `main` is the trunk, protected, deployed to production via Cloudflare Pages.\n- `develop` (optional) for staging previews.\n- Agents create ephemeral branches named `agent/<task-id>` off `main`.\n- PRs are labeled by an automation (BugBot) by author, risk, size.\n- CODEOWNERS gates merges on humans for any file under `apps/functions-api/`.\n\n**Why not multi-repo?** The Cloud Agent docs *do* support \"multi-repo environments\" ([branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree[0]] [56]), but for a marketing template where campaigns share styles and analytics flows into one GHL account, the coordination tax of cross-repo PRs exceeds the isolation benefit. Multi-repo is right when each repo has independent deploys and ownership - not when you have a single brand.\n\n**Case study: Faire's branch strategy.** Faire ran \"an agent labels every PR by author, risk, and size, then routes the PR to a tailored code review workflow\" ([branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree[3]] [21]). Their \"Programmatic agents with Cursor Automations\" run on merge events and \"Automating legacy migrations with parallelized agents\" use short-lived branches that are deleted after merge. The lesson for the dealership template: the branching model is not about humans vs agents; it's about agents producing *merge-ready* PRs and automations reacting to merge events.",
+      "official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust": "The primary sources divide into three trust tiers. Tier 1 is the official Cursor docs at `cursor.com/docs/*`, the changelog at `cursor.com/changelog`, and Cursor's own blog at `cursor.com/blog/*`. Tier 2 is the Cursor forum at `forum.cursor.com`, especially threads from staff and senior users. Tier 3 is high-quality 2025-2026 community guides.\n\n| Tier | Source | Trust signal | When to cite |\n|------|--------|-------------|--------------|\n| 1 | [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[0]] [1], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[1]] [10], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[2]] [30], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[3]] [34], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[4]] [56], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[5]] [41], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[6]] [75] | Authoritative file paths, schema, frontmatter | Always - these define what is possible |\n| 1 | [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[7]] [15], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[8]] [21], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[9]] [47], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[10]] [49] | Date-stamped, signed by Cursor team | When discussing new features, case studies |\n| 2 | [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[11]] [51], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[12]] [53], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[13]] [11] | Real users, sometimes staff replies | When docs are silent on edge cases |\n| 3 | [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[14]] [2], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[15]] [4], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[16]] [13], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[17]] [38], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[18]] [40], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[19]] [83], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[20]] [14], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[21]] [81] | Cross-referenced, dated 2025-2026 | When official docs are too thin or vague |\n| 1 | [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[22]] [7], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[23]] [71], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[24]] [72], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[25]] [70], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[26]] [80] | First-party Cloudflare docs | For anything Cloudflare-specific |\n\n**Observation -> mechanism -> implication.** *Observation:* the AGENTS.md spec is the only file format read by 30+ tools, which is why Cursor officially supports it ([official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[14]] [2], [official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[15]] [4]). *Mechanism:* Cursor reads AGENTS.md \"in the project root and subdirectories\" with \"the closest one wins\" ([official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust[0]] [1]). *Implication:* even if you later switch from Cursor to a different agent, your AGENTS.md travels with the repo - which is why it should be your canonical agent-facing doc, with README.md kept for humans only.\n\n**Cross-cutting insight: the 2026 docs converge on three patterns.** First, \"nearest file wins\" for nested AGENTS.md and `.cursor/rules/` (Cursor + AGENTS.md spec agree). Second, \"alwaysApply vs description\" is a two-stage decision (deanrie on forum + sbstjn agree). Third, \"open the monorepo root, not a subfolder\" (Naufaldi_Rafif on forum + Cursor skill docs agree). When three independent sources converge, treat it as a hard rule.",
+      "synthesis_putting_it_all_together_for_the_dealership_template": "**Three principles, three mechanisms, three actions.** *Principle 1:* one source of truth per layer - AGENTS.md (cross-tool), `.cursor/rules/*.mdc` (Cursor conventions), `.cursor/skills/<name>/SKILL.md` (deep workflows), `.cursor/mcp.json` (tools). *Mechanism:* each layer has a different cost model (always paid, paid when injected, paid when loaded, paid per call) so mixing them is wasteful. *Action:* audit the current repo root - you should see exactly one AGENTS.md, one `.cursor/`, and one `wrangler.toml`; everything else is application code.\n\n*Principle 2:* monorepo mode means root-level opening and nearest-file-wins. *Mechanism:* both Cursor skills docs and the forum consensus say open the root; rules nested under apps need relative-path globs or `alwaysApply: true` to avoid being silently ignored ([synthesis_putting_it_all_together_for_the_dealership_template[0]] [51]). *Action:* keep `.cursor/rules/00-*.mdc` at the root with `alwaysApply: true`, and per-app rules under `apps/<name>/.cursor/rules/` with relative globs.\n\n*Principle 3:* asset flooding is the silent killer. *Mechanism:* the agent loads files into context eagerly; binaries and large media eat tokens without giving the model signal. *Action:* move every product image and campaign hero into `apps/site/assets/` and add `/assets/` to `.cursorignore`; the agent will never see them but Cloudflare Pages will still serve them.\n\n**Comparative analysis across the major entities.** Cursor's official docs (rules, skills, MCP, subagents, plugins) treat the AI customization surface as a small set of orthogonal primitives that compose. The Cursor blog (Faire, Automations, Linear) shows these primitives stitched together for production use. Cloudflare's docs (Monorepos, Wrangler, Functions, Cursor agent setup) treat the deployment surface as a small set of project-rooted units (`wrangler.toml` per project, `pages_build_output_dir`, `functions/`). The Cursor forum threads fill the gaps where docs are silent (monorepo rule placement, subfolder opening). The community guides (Morphllm, Builder.io, sbstjn, agensi, kirill-markin, nedcodes, prompthub) translate the docs into decision frameworks and concrete examples.\n\n**Trade-offs and tensions.** There is a tension between the AGENTS.md spec (open standard, 30+ tools) and Cursor's `.cursor/rules/` (Cursor-only). The AGENTS.md spec wins for cross-tool portability, but `.cursor/rules/` wins for Cursor-specific frontmatter (globs, alwaysApply). The solution is to keep AGENTS.md as the canonical entry point and put Cursor-only refinements in `.cursor/rules/` that *link* to AGENTS.md rather than duplicate it. There is also a tension between the Cursor 3 multi-agent workflow (one agent per worktree) and the Cloudflare Pages monorepo (one Pages project per `wrangler.toml`). For the dealership template, both are right - one worktree per parallel agent, one Pages project per app.\n\n**Inflection point to watch.** Cursor 3.10 (Jun 30, 2026) shipped team marketplaces that distribute plugins, skills, MCPs, subagents, rules, commands, and hooks at the user, team, or workspace level ([synthesis_putting_it_all_together_for_the_dealership_template[1]] [15]). This is the inflection: in 12 months, the average Cursor repo will have less hand-written rules and more marketplace-installed capabilities. Plan your target tree to assume plugins will move in and out of `.cursor/plugins/` while your own rules, skills, and AGENTS.md stay stable.\n\n**Failure cases to avoid.** Skip AGENTS.md and the agent re-asks the same build/test questions every chat. Put the Playbook at the repo root and the agent burns 50+ pages of marketing copy on every code edit. Use absolute-path globs in monorepo rules and the agent silently ignores them (deanrie's warning). Don't `.cursorignore` the assets folder and the agent's context fills with binary noise. Open Cursor at `apps/site/` instead of the repo root and the agent loses the architecture map (Naufaldi_Rafif's warning).\n\n**Skepticism addressed.** \"But what if Cursor changes AGENTS.md support?\" - the AGENTS.md spec is maintained by the agents.md open project with 60,000+ repos; even if Cursor dropped it, 30+ other tools would still read it. \"But what if monorepos are overkill for a 200-page marketing site?\" - the cost of monorepo structure is a one-time migration; the benefit is per-app deploy isolation and per-app rules without coordination. \"But what if the Cloudflare plugin breaks?\" - the plugin is just skills + MCPs; you can replicate it locally with `.cursor/skills/wrangler-deploy/SKILL.md` and `.cursor/mcp.json`."
+    },
+    "type": "json",
+    "beta_fields": null,
+    "mcp_tool_calls": null,
+    "output_schema": {
+      "type": "object",
+      "properties": {
+        "executive_summary": {
+          "type": "string",
+          "title": "Executive Summary"
+        },
+        "agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer": {
+          "type": "string",
+          "title": "AGENTS.md vs README.md vs CLAUDE.md vs .cursorrules: Pick One Source of Truth per Layer"
+        },
+        "rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer": {
+          "type": "string",
+          "title": "Rules vs Skills vs MCP vs Commands: One Tool per Layer"
+        },
+        "setup_order_rules_first_skills_second_plugins_and_mcp_third_branching_last": {
+          "type": "string",
+          "title": "Setup Order: Rules First, Skills Second, Plugins and MCP Third, Branching Last"
+        },
+        "branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches": {
+          "type": "string",
+          "title": "Branching for Cursor Cloud Agents and Background Agents: One Trunk, Many Short-Lived Branches"
+        },
+        "rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template": {
+          "type": "string",
+          "title": "Rules, Skills, MCPs, and Ignore Files: Concrete File Tree for the Dealership Template"
+        },
+        "branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree": {
+          "type": "string",
+          "title": "Branching Strategy Decoded: When to Trunk, When to Fork, When to Worktree"
+        },
+        "official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust": {
+          "type": "string",
+          "title": "Official Docs, Forum Posts, and 2025-2026 Community Resources: What to Trust"
+        },
+        "synthesis_putting_it_all_together_for_the_dealership_template": {
+          "type": "string",
+          "title": "Synthesis: Putting It All Together for the Dealership Template"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "agents_md_vs_readme_md_vs_claude_md_vs_cursorrules_pick_one_source_of_truth_per_layer",
+        "rules_vs_skills_vs_mcp_vs_commands_one_tool_per_layer",
+        "setup_order_rules_first_skills_second_plugins_and_mcp_third_branching_last",
+        "branching_for_cursor_cloud_agents_and_background_agents_one_trunk_many_short_lived_branches",
+        "rules_skills_mcps_and_ignore_files_concrete_file_tree_for_the_dealership_template",
+        "branching_strategy_decoded_when_to_trunk_when_to_fork_when_to_worktree",
+        "official_docs_forum_posts_and_2025_2026_community_resources_what_to_trust",
+        "synthesis_putting_it_all_together_for_the_dealership_template"
+      ]
+    }
+  }
+}
