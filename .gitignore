@@ -5,7 +5,9 @@ node_modules/
 
 # Secrets / credentials (never commit)
 .env
-.env.*
+.env.local
+.env.*.local
+!.env.example
 *-ga4*.json
 ga4-credentials.json
 **/paradise-ga4.json

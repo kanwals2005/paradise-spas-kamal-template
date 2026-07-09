@@ -65,7 +65,31 @@ const wranglerConfig = path.join(siteRoot, "wrangler.jsonc");
 if (!fs.existsSync(wranglerConfig)) {
   fail("missing apps/site/wrangler.jsonc");
 } else {
-  ok("apps/site/wrangler.jsonc present");
+  const wrangler = fs.readFileSync(wranglerConfig, "utf8");
+  if (!wrangler.includes("account_id")) {
+    fail("apps/site/wrangler.jsonc should include account_id");
+  } else {
+    ok("apps/site/wrangler.jsonc present with account_id");
+  }
+}
+
+const envExample = path.join(root, ".env.example");
+const envLocal = path.join(root, ".env.local");
+if (!fs.existsSync(envExample)) {
+  fail("missing .env.example template");
+} else {
+  ok(".env.example template present");
+}
+if (!fs.existsSync(envLocal)) {
+  console.warn("WARN: .env.local not found — copy .env.example and add CLOUDFLARE_API_TOKEN");
+} else {
+  ok(".env.local present (gitignored)");
+}
+
+if (!deploy.includes("dotenv") || !preview.includes("dotenv")) {
+  fail("deploy scripts should load .env.local via dotenv-cli");
+} else {
+  ok("deploy scripts load credentials from .env.local");
 }
 
 if (failed) {

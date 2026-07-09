@@ -2,14 +2,15 @@
   "name": "hot-tub-dealer-website-template",
   "private": true,
   "scripts": {
-    "deploy": "npx wrangler pages deploy apps/site --project-name paradise-spas --branch main",
-    "preview:deploy": "npx wrangler pages deploy apps/site --project-name paradise-spas --branch preview",
+    "deploy": "dotenv -e .env.local -- npx wrangler pages deploy apps/site --project-name paradise-spas --branch main",
+    "preview:deploy": "dotenv -e .env.local -- npx wrangler pages deploy apps/site --project-name paradise-spas --branch preview",
     "ga4:funnel": "node scripts/ga4-funnel-report.mjs",
     "ga4:pages": "node scripts/ga4-funnel-report.mjs --all-pages",
     "check:structure": "node scripts/check-structure.mjs",
     "verify:deploy": "node scripts/verify-deploy-config.mjs"
   },
   "devDependencies": {
+    "dotenv-cli": "^11.0.0",
     "wrangler": "latest"
   }
 }

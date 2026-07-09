@@ -57,12 +57,27 @@ This project uses **direct Wrangler upload** (not a separate build step):
 
 ```bash
 npm install
-export CLOUDFLARE_ACCOUNT_ID=your_account_id
-export CLOUDFLARE_API_TOKEN=your_api_token   # or wrangler login
+cp .env.example .env.local
+# Edit .env.local — add your CLOUDFLARE_API_TOKEN (never commit this file)
 npm run verify:deploy   # sanity check
 npm run preview:deploy  # safe test first
 npm run deploy          # production
 ```
+
+Deploy scripts load credentials from `.env.local` via `dotenv-cli`.  
+Create your token: **Cloudflare Dashboard → My Profile → API Tokens → Create Token**.
+
+**Minimum permissions** (Paradise Spas / Wrangler Pages deploy):
+
+| Permission | Access | Why |
+|------------|--------|-----|
+| Account → Cloudflare Pages | Edit | Deploy `apps/site`, list deployments |
+| Account → Workers Scripts | Edit | Pages Functions under `apps/site/functions/` |
+| User → Memberships | Read | Wrangler resolves account ID |
+
+Optional (if agents manage env vars): Account → Cloudflare Pages → Edit already covers secret list/set via Wrangler.
+
+Account ID for this project is in `.env.example` / `apps/site/wrangler.jsonc`.
 
 `package.json` deploys **`apps/site`** — that folder contains `index.html`, `functions/`, `_redirects`, etc.
 
