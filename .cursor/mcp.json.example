@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "cloudflare-docs": {
+      "command": "npx",
+      "args": ["-y", "@cloudflare/mcp-server-cloudflare"],
+      "env": {}
+    }
+  }
+}
