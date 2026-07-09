@@ -5,6 +5,18 @@ Static dealer website built for Paradise Spas (Minot, ND). Use as a starting poi
 **Live site:** https://www.paradisespas.com  
 **Hosting:** Cloudflare Pages
 
+## Repo layout (for humans + Cursor)
+
+| Path | What |
+|------|------|
+| `apps/site/` | Website + Cloudflare Pages Functions |
+| `apps/dashboard/` | ROAS dashboard / tracking SOPs |
+| `packages/agency-starter/` | Copy-paste lead stack for other sites |
+| `docs/PLAYBOOK.md` | Conversion playbook |
+| `AGENTS.md` | Instructions for coding agents |
+
+Open this repository at the **root** in Cursor.
+
 ## What's included
 
 - Homepage, inventory, category pages (hot tubs, swim spas, saunas)
