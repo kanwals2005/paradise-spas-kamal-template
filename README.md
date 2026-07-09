@@ -29,9 +29,9 @@ Open this repository at the **root** in Cursor.
 
 1. **Duplicate this repo** (or use GitHub template)
 2. **Replace branding**
-   - `paradiselogo.svg`, `paradiselogofooter.svg`
+   - `apps/site/assets/brand/paradiselogo.svg`, `apps/site/assets/brand/paradiselogofooter.svg`
    - Hero/lifestyle/product images
-   - Colors in `style.css` (search for `#0d4cae`, `#F0A500`)
+   - Colors in `apps/site/style.css` (search for `#0d4cae`, `#F0A500`)
 3. **Update business info** across HTML files
    - Phone: search `7017145879` / `701-714-5879`
    - Address, email, Facebook URL
@@ -44,7 +44,7 @@ Open this repository at the **root** in Cursor.
    - Meta Pixel: search `1317738110513512`
    - GA4: search `G-E5WGSEGZYP`
    - Clarity: search `xeoe7g20ml`
-   - Thank-you page Lead value: search `950` in `thank-you.html`
+   - Thank-you page Lead value: search `950` in `apps/site/thank-you.html`
 6. **Deploy to Cloudflare Pages**
 
 ```bash
@@ -68,29 +68,29 @@ Requires [Wrangler](https://developers.cloudflare.com/workers/wrangler/) and `CL
 
 | File | Purpose |
 |------|---------|
-| `style.css` | All styling |
-| `ghl-modal.js` | GHL popup modal |
-| `call-tracking.js` | GA4 + Clarity call-click events |
-| `pricing-tracking.js` | GA4 + Clarity pricing-click events |
-| `category-page.js` | Category page interactions |
-| `product-page.js` | Product page gallery/tabs |
-| `_redirects` | Cloudflare URL redirects |
-| `thank-you.html` | Post-form redirect + conversion events |
+| `apps/site/style.css` | All styling |
+| `apps/site/js/ghl-modal.js` | GHL popup modal |
+| `apps/site/js/call-tracking.js` | GA4 + Clarity call-click events |
+| `apps/site/js/pricing-tracking.js` | GA4 + Clarity pricing-click events |
+| `apps/site/js/category-page.js` | Category page interactions |
+| `apps/site/js/product-page.js` | Product page gallery/tabs |
+| `apps/site/_redirects` | Cloudflare URL redirects |
+| `apps/site/thank-you.html` | Post-form redirect + conversion events |
 | `apps/dashboard/` | Looker Studio setup + GHL→Sheets sync for Increase ROAS reporting |
-| `functions/api/lead.js` | Lead vault API (Sheet backup → GHL) — see `apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md` |
-| `lead-form.js` | Native gate form submit handler |
+| `apps/site/functions/api/lead.js` | Lead vault API (Sheet backup → GHL) — see `apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md` |
+| `apps/site/js/lead-form.js` | Native gate form submit handler |
 
 ## Pages
 
 ```
-index.html
-inventory.html
-contact.html
-financing.html
-thank-you.html
-hot-tubs/index.html
-swim-spas/index.html
-saunas/index.html
-find-my-spa/index.html
-product*.html
+apps/site/index.html
+apps/site/inventory.html
+apps/site/contact.html
+apps/site/financing.html
+apps/site/thank-you.html
+apps/site/hot-tubs/index.html
+apps/site/swim-spas/index.html
+apps/site/saunas/index.html
+apps/site/find-my-spa/index.html
+apps/site/product*.html
 ```
