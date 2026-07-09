@@ -20,10 +20,15 @@ Never open only `apps/site/` as the workspace root — you will lose monorepo co
 ## Commands
 ```bash
 npm install
+npm run check:structure   # verify monorepo layout
+npm run verify:deploy     # verify deploy targets apps/site
 npm run deploy            # production Pages deploy of apps/site
 npm run preview:deploy    # preview branch deploy
 npm run ga4:funnel        # GA4 funnel report (needs credentials)
 ```
+
+## Cursor + Cloudflare (Task 12 — human setup)
+See `docs/TASK-12-CURSOR-CLOUDFLARE-SETUP.md`. Summary: open repo at root, run `/add-plugin cloudflare`, copy `.cursor/mcp.json.example` → `.cursor/mcp.json`, OAuth-connect MCP servers, confirm GitHub default branch is `master`, run `npm run verify:deploy` before production deploy.
 
 ## Non-negotiables
 1. Pages Functions stay at `apps/site/functions/` (same project as HTML).

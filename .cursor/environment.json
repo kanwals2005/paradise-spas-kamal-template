@@ -1,5 +1,6 @@
 {
   "snapshot": "OPTIONAL_SNAPSHOT_ID",
   "install": "npm install",
-  "terminals": []
+  "terminals": [],
+  "baseBranch": "master"
 }

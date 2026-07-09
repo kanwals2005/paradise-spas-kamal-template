@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "paradise-spas",
+  // Static site: this directory IS the Pages deploy root (no build step).
+  // Deploy with: npm run deploy  (from repo root)
+  // or: npx wrangler pages deploy . --project-name paradise-spas --branch main
+  "compatibility_date": "2026-07-09",
+  "compatibility_flags": ["nodejs_compat"]
+}

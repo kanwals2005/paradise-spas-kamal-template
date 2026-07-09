@@ -6,7 +6,8 @@
     "preview:deploy": "npx wrangler pages deploy apps/site --project-name paradise-spas --branch preview",
     "ga4:funnel": "node scripts/ga4-funnel-report.mjs",
     "ga4:pages": "node scripts/ga4-funnel-report.mjs --all-pages",
-    "check:structure": "node scripts/check-structure.mjs"
+    "check:structure": "node scripts/check-structure.mjs",
+    "verify:deploy": "node scripts/verify-deploy-config.mjs"
   },
   "devDependencies": {
     "wrangler": "latest"
