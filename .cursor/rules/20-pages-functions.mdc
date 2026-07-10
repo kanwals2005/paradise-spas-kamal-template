@@ -1,0 +1,13 @@
+---
+description: Cloudflare Pages Functions lead API rules
+globs:
+  - apps/site/functions/**/*.js
+alwaysApply: false
+---
+
+# Pages Functions
+
+- Functions MUST remain under `apps/site/functions/` (same Pages project as HTML).
+- Reuse `lib/validate.js`, `lib/ghl.js`, `lib/sheets.js`, `lib/meta-capi.js`, `lib/cors.js`, `lib/alert.js`.
+- Never log PII (phone/email) in full. Never commit API keys — use Pages env vars.
+- Await all async work. Keep handlers small; put logic in `lib/`.

@@ -1,0 +1,12 @@
+---
+description: Repo map and non-negotiables for Paradise Spas dealer template
+alwaysApply: true
+---
+
+# Project overview
+
+- Read `AGENTS.md` first. Open the workspace at the repo root.
+- Live site + Pages Functions: `apps/site/`.
+- SOPs: `apps/dashboard/`. Portable kit: `packages/agency-starter/`.
+- Playbook: `docs/PLAYBOOK.md` — open only when the task is conversion strategy.
+- Vanilla HTML/CSS/JS only in `apps/site` unless a human explicitly requests a framework.

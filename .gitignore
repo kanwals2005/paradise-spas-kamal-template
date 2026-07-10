@@ -2,10 +2,18 @@
 .wrangler/
 node_modules/
 *.log
+
+# Secrets / credentials (never commit)
 .env
-.env.*
-.cursor/
-.cursor/mcp.json
+.env.local
+.env.*.local
+!.env.example
 *-ga4*.json
 ga4-credentials.json
 **/paradise-ga4.json
+
+# Local Cursor MCP secrets (use mcp.json.example in git)
+.cursor/mcp.json
+
+# Optional local-only Cursor state
+.cursor/*.local.*

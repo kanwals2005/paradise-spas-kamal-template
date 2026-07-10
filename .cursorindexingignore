@@ -1,0 +1,9 @@
+# Inherit gitignore semantics; reinforce binaries
+apps/site/assets/
+docs/research/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4

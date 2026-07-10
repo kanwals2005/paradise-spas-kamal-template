@@ -1,0 +1,13 @@
+---
+description: Tracking pixels, GA4 events, GHL form IDs
+globs:
+  - apps/site/**/*.{html,js}
+  - apps/dashboard/**/*.md
+alwaysApply: false
+---
+
+# Tracking & leads
+
+- Do not invent new Meta Pixel / GA4 / Clarity / GHL IDs — search the repo for current values.
+- Thank-you conversion value and event names must stay consistent with `thank-you.html` and dashboard SOPs.
+- Call / pricing events live in `apps/site/js/call-tracking.js` and `pricing-tracking.js`.

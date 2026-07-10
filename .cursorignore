@@ -1,0 +1,16 @@
+# Large media — agents edit HTML/JS, not binary pixels
+apps/site/assets/
+**/assets/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.pdf
+
+# Research dumps / lock noise
+docs/research/*.json
+package-lock.json
+node_modules/
+.wrangler/
