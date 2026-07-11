@@ -113,5 +113,41 @@ Manual smoke test after preview deploy:
 
 ## 7. Optional: enable other MCP servers you already use
 
-Add to `.cursor/mcp.json` (local only) as needed — e.g. GitLab, Parallel.  
+Add to `.cursor/mcp.json` (local only) as needed — e.g. GitLab, **Parallel**.  
 Do not commit tokens; use OAuth or `${env:VAR_NAME}` interpolation per Cursor docs.
+
+**Parallel** (section 7) = broad web search for general research.  
+For code-aware research and doc verification, see section 8 (Exa + Ref).
+
+## 8. Exa + Ref research (project-scoped)
+
+The repo templates **Exa** and **Ref** in `.cursor/mcp.json.example` for research that needs code context or official doc verification.  
+Rule `.cursor/rules/50-research-exa.mdc` applies automatically when these servers are connected.
+
+| Tool | Role |
+|------|------|
+| **Parallel** (section 7) | Broad web search — general facts, news, competitor pages |
+| **Exa** | Code context — libraries, APIs, implementation patterns |
+| **Ref** | Doc verification — official docs when Exa/Parallel conflict |
+
+### Step table
+
+| Step | Action |
+|------|--------|
+| 1 | Get API keys: [Exa dashboard](https://dashboard.exa.ai/) → API keys; [ref.tools](https://ref.tools/) → API keys |
+| 2 | Export locally (never commit): `export EXA_API_KEY="..."` and `export REF_API_KEY="..."` (add to `~/.bashrc`, `~/.zshrc`, or your shell profile) |
+| 3 | Copy MCP config: `cp .cursor/mcp.json.example .cursor/mcp.json` |
+| 4 | Reload Cursor (or reload window) |
+| 5 | **Customize → Tools & MCP** — confirm **exa** and **Ref** show connected (not `needsAuth` / error) |
+| 6 | Test with a prompt such as: *"What is the Wrangler Pages deploy syntax when the site lives in a subdirectory like `apps/site`?"* — expect Exa code context and/or Ref doc citations |
+
+### Stdio fallback (optional)
+
+If HTTP MCP fails, add stdio entries to your local `.cursor/mcp.json` instead:
+
+| Server | Command | Env |
+|--------|---------|-----|
+| Exa | `npx -y exa-mcp-server` | `EXA_API_KEY` |
+| Ref | `npx ref-tools-mcp@latest` | `REF_API_KEY` |
+
+Keep `.cursor/mcp.json` gitignored; never commit API keys.
