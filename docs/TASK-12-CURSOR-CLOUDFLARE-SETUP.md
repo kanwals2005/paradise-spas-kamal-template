@@ -151,3 +151,25 @@ If HTTP MCP fails, add stdio entries to your local `.cursor/mcp.json` instead:
 | Ref | `npx ref-tools-mcp@latest` | `REF_API_KEY` |
 
 Keep `.cursor/mcp.json` gitignored; never commit API keys.
+
+## 9. Vital MCPs: Convex, GitHub, Exa, Ref
+
+**Full step-by-step:** [`docs/MCP-VITAL-SETUP.md`](MCP-VITAL-SETUP.md)
+
+Quick checklist for your **home machine**:
+
+| Server | Auth method |
+|--------|-------------|
+| **Convex** | `npx convex login` + Convex plugin (`/add-plugin convex`); MCP runs via `npx convex mcp start` |
+| **GitHub** | `export GITHUB_PERSONAL_ACCESS_TOKEN=...` (fine-grained PAT with repo + PR write) |
+| **Exa** | `export EXA_API_KEY=...` |
+| **Ref** | `export REF_API_KEY=...` |
+| **Cloudflare** (×3) | OAuth **Connect** in Tools & MCP |
+
+```bash
+cp .cursor/mcp.json.example .cursor/mcp.json
+# Add exports to ~/.zshrc, quit and reopen Cursor
+# Customize → Tools & MCP → green dots on all servers
+```
+
+For Cloud Agents to open PRs, also set `GH_TOKEN` in your Cursor cloud environment (same PAT).

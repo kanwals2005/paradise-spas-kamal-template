@@ -17,6 +17,7 @@ Never open only `apps/site/` as the workspace root — you will lose monorepo co
 - `.cursor/rules/` — always-on guardrails
 - `.cursor/skills/` — on-demand workflows
 - Research policy (Exa / Parallel / Ref): `.cursor/rules/50-research-exa.mdc` — applies when tasks need external docs, not for local code edits.
+- Vital MCP auth (Convex, GitHub, Exa, Ref): `docs/MCP-VITAL-SETUP.md` — copy `.cursor/mcp.json.example` → `.cursor/mcp.json`, set env vars, Connect in Tools & MCP.
 
 ## Commands
 ```bash
