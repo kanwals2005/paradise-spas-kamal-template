@@ -16,6 +16,7 @@ Never open only `apps/site/` as the workspace root — you will lose monorepo co
 - `docs/PLAYBOOK.md` — conversion playbook (load only when asked)
 - `.cursor/rules/` — always-on guardrails
 - `.cursor/skills/` — on-demand workflows
+- Research policy (Exa / Parallel / Ref): `.cursor/rules/50-research-exa.mdc` — applies when tasks need external docs, not for local code edits.
 
 ## Commands
 ```bash
