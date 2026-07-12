@@ -1,9 +1,20 @@
 # Vital MCP setup (home machine)
 
-Authenticate **Convex**, **GitHub**, **Exa**, and **Ref** for this repo.  
+**Agent tooling only** — MCP servers help Cursor read docs, open PRs, and research APIs. They are **not** part of the Paradise Spas live site runtime.
+
+| Server | Needed for client site? |
+|--------|-------------------------|
+| Cloudflare MCP | Useful — deploy docs, builds, `/api/lead` logs |
+| GitHub MCP | Useful — PRs and repo ops |
+| Exa / Ref | Optional — external research |
+| Convex MCP | **Optional** — no `convex/` backend in this repo today |
+
+Authenticate **GitHub**, **Exa**, and **Ref** as needed. Convex is optional unless you add a Convex project later.  
 Cloudflare MCP servers use OAuth in Cursor (section 3 below).
 
 Do **not** commit `.cursor/mcp.json` or API tokens.
+
+See also: [ARCHITECTURE.md](./ARCHITECTURE.md), [ENVIRONMENT.md](./ENVIRONMENT.md).
 
 ---
 
@@ -43,7 +54,7 @@ Optional: also set `GH_TOKEN` to the same value as `GITHUB_PERSONAL_ACCESS_TOKEN
 | **Cloudflare-docs** | Click **Connect** → complete OAuth in browser |
 | **Cloudflare-bindings** | Click **Connect** → OAuth |
 | **Cloudflare-builds** | Click **Connect** → OAuth |
-| **convex** | Runs `npx convex mcp start`. First time: run `npx convex login` in a terminal (or `npx convex dev` in a Convex project). Install Convex plugin: `/add-plugin convex` |
+| **convex** | *(Optional)* Runs `npx convex mcp start` for agent tooling only — this Paradise Spas repo has no Convex backend. Skip unless you are working on a separate Convex project. |
 | **github** | Uses `GITHUB_PERSONAL_ACCESS_TOKEN` from step 2. Create PAT: https://github.com/settings/tokens — scopes: **repo**, **read:org** (if org repos). Official docs: https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-cursor.md |
 | **exa** | Uses `EXA_API_KEY` from step 2 |
 | **Ref** | Uses `REF_API_KEY` from step 2 |
@@ -59,7 +70,7 @@ In Cursor chat, try one prompt per tool:
 | github | *List open pull requests on kanwals2005/paradise-spas-kamal-template* |
 | exa | *Use Exa: current Wrangler Pages deploy syntax for a subdirectory* |
 | Ref | *Use Ref to verify Cloudflare Pages monorepo build output directory* |
-| convex | *What Convex MCP tools are available?* (or test in a repo with `convex/`) |
+| convex | *(Optional)* Skip for Paradise Spas unless adding a Convex backend in a future phase |
 
 Research policy: `.cursor/rules/50-research-exa.mdc` (Exa → Parallel → Ref order when external research is needed).
 

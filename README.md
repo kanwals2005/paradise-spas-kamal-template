@@ -1,96 +1,86 @@
-# Hot Tub Dealer Website Template
+# Paradise Spas — Client Website
 
-Static dealer website built for Paradise Spas (Minot, ND). Use as a starting point for other hot tub / outdoor living clients.
+Static dealer website for **Paradise Spas** (Minot, ND), hosted on Cloudflare Pages.
 
 **Live site:** https://www.paradisespas.com  
-**Hosting:** Cloudflare Pages
+**Hosting:** Cloudflare Pages + Pages Functions (`/api/lead`)
 
-## Repo layout (for humans + Cursor)
+This repo is the **current client site**, not a SaaS platform. Runtime is vanilla HTML/CSS/JS — no Convex backend, no React/Next app in production.
+
+## Repo layout
 
 | Path | What |
 |------|------|
-| `apps/site/` | Website + Cloudflare Pages Functions |
-| `apps/dashboard/` | ROAS dashboard / tracking SOPs |
-| `packages/agency-starter/` | Copy-paste lead stack for other sites |
-| `docs/PLAYBOOK.md` | Conversion playbook |
+| `apps/site/` | Live website + Cloudflare Pages Functions |
+| `apps/dashboard/` | ROAS dashboard / tracking / lead-insurance SOPs |
+| `packages/agency-starter/` | Reusable lead stack for **other** clients (secondary) |
+| `docs/` | Architecture, deployment, operations, QA |
 | `AGENTS.md` | Instructions for coding agents |
 
 Open this repository at the **root** in Cursor.
 
-## What's included
+## Documentation
+
+| Doc | Purpose |
+|-----|---------|
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | What runs in production today |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Preview and production deploy |
+| [docs/ENVIRONMENT.md](docs/ENVIRONMENT.md) | Env vars by layer |
+| [docs/CLIENT-OPERATIONS.md](docs/CLIENT-OPERATIONS.md) | Routine content updates |
+| [docs/INVENTORY-UPDATE.md](docs/INVENTORY-UPDATE.md) | Product/pricing in JS |
+| [docs/QA-CHECKLIST.md](docs/QA-CHECKLIST.md) | Pre/post deploy smoke tests |
+| [docs/LEAD-RECOVERY.md](docs/LEAD-RECOVERY.md) | Missed GHL lead reimport |
+| [docs/PLAYBOOK.md](docs/PLAYBOOK.md) | Conversion playbook (strategy) |
+
+Historical agent implementation plans: `docs/superpowers/plans/` — not day-to-day ops.
+
+## What's on the live site
 
 - Homepage, inventory, category pages (hot tubs, swim spas, saunas)
 - Product detail pages, financing, contact, Find My Spa quiz
-- GHL popup + inline forms
+- GHL popup + native gate forms
 - Thank-you page with conversion tracking ($950 Lead event)
 - Meta Pixel, GA4, Clarity, call-click tracking
+- Lead vault API (Google Sheets → GHL → Meta CAPI)
 
-## Quick start (new client)
-
-1. **Duplicate this repo** (or use GitHub template)
-2. **Replace branding**
-   - `apps/site/assets/brand/paradiselogo.svg`, `apps/site/assets/brand/paradiselogofooter.svg`
-   - Hero/lifestyle/product images
-   - Colors in `apps/site/style.css` (search for `#0d4cae`, `#F0A500`)
-3. **Update business info** across HTML files
-   - Phone: search `7017145879` / `701-714-5879`
-   - Address, email, Facebook URL
-   - Page titles and meta descriptions
-4. **GoHighLevel**
-   - Form ID: search `iz3wpzwCI9GQhR3wlwbV`
-   - Chat widget ID: search `6a4454fd638eec5af4195a51`
-   - Set form redirect to `https://YOURDOMAIN.com/thank-you.html`
-5. **Tracking IDs** (in every HTML `<head>`)
-   - Meta Pixel: search `1317738110513512`
-   - GA4: search `G-E5WGSEGZYP`
-   - Clarity: search `xeoe7g20ml`
-   - Thank-you page Lead value: search `950` in `apps/site/thank-you.html`
-6. **Deploy to Cloudflare Pages**
+## Deploy (Paradise Spas)
 
 ```bash
 npm install
-export CLOUDFLARE_ACCOUNT_ID=your_account_id
-npm run deploy
+cp .env.example .env.local   # add CLOUDFLARE_API_TOKEN — never commit
+npm run verify:deploy
+npm run preview:deploy       # test first
+npm run deploy               # production
 ```
-
-Create a new Cloudflare Pages project per client, or change `--project-name` in `package.json`.
-
-## Deploy commands
 
 | Command | Purpose |
 |---------|---------|
-| `npm run deploy` | Production (main branch) |
-| `npm run preview:deploy` | Preview branch |
+| `npm run dev` | Local dev with Functions — **port 8788** |
+| `npm run dev:static` | Static only — port 4321 (no `/api/lead`) |
+| `npm run preview:deploy` | Cloudflare preview |
+| `npm run deploy` | Production |
 
-Requires [Wrangler](https://developers.cloudflare.com/workers/wrangler/) and `CLOUDFLARE_ACCOUNT_ID` set in your environment.
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 ## Key files
 
 | File | Purpose |
 |------|---------|
-| `apps/site/style.css` | All styling |
+| `apps/site/style.css` | Site styling |
+| `apps/site/js/inventory-hot-tubs.js` | Inventory product data |
 | `apps/site/js/ghl-modal.js` | GHL popup modal |
-| `apps/site/js/call-tracking.js` | GA4 + Clarity call-click events |
-| `apps/site/js/pricing-tracking.js` | GA4 + Clarity pricing-click events |
-| `apps/site/js/category-page.js` | Category page interactions |
-| `apps/site/js/product-page.js` | Product page gallery/tabs |
-| `apps/site/_redirects` | Cloudflare URL redirects |
-| `apps/site/thank-you.html` | Post-form redirect + conversion events |
-| `apps/dashboard/` | Looker Studio setup + GHL→Sheets sync for Increase ROAS reporting |
-| `apps/site/functions/api/lead.js` | Lead vault API (Sheet backup → GHL) — see `apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md` |
-| `apps/site/js/lead-form.js` | Native gate form submit handler |
+| `apps/site/js/lead-form.js` | Native gate form handler |
+| `apps/site/functions/api/lead.js` | Lead vault API |
+| `apps/site/_redirects` | URL redirects |
+| `apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md` | Lead API env setup |
 
-## Pages
+## Reusable kit (other clients)
 
-```
-apps/site/index.html
-apps/site/inventory.html
-apps/site/contact.html
-apps/site/financing.html
-apps/site/thank-you.html
-apps/site/hot-tubs/index.html
-apps/site/swim-spas/index.html
-apps/site/saunas/index.html
-apps/site/find-my-spa/index.html
-apps/site/product*.html
-```
+To bootstrap a **new** non-Paradise site, use `packages/agency-starter/` — see [packages/agency-starter/README.md](packages/agency-starter/README.md).  
+Paradise Spas source of truth remains `apps/site/` (may diverge from the kit).
+
+## Cursor / MCP (agents only)
+
+MCP servers (Cloudflare, GitHub, Exa, Ref) help **developers and agents** — they are not part of the live site runtime.  
+Convex MCP is optional tooling; this repo has no Convex backend.  
+Setup: [docs/MCP-VITAL-SETUP.md](docs/MCP-VITAL-SETUP.md), [docs/TASK-12-CURSOR-CLOUDFLARE-SETUP.md](docs/TASK-12-CURSOR-CLOUDFLARE-SETUP.md).

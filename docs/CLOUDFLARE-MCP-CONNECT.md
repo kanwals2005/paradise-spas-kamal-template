@@ -3,6 +3,10 @@
 Step-by-step for **Paradise Spas** on your **home Cursor Desktop**.  
 OAuth happens in your browser — the agent cannot click Connect for you.
 
+**Agent tooling only.** Cloudflare MCP helps inspect deployments and `/api/lead` logs. Production deploy still uses `npm run deploy` and `.env.local` — not MCP OAuth.
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for what runs on the live client site.
+
 ---
 
 ## What you need Cloudflare MCP for (this repo)
@@ -11,7 +15,7 @@ OAuth happens in your browser — the agent cannot click Connect for you.
 |--------|------|------------------------|
 | **Cloudflare-docs** | None | Wrangler, Pages, Functions docs — works immediately |
 | **Cloudflare-builds** | OAuth **Connect** | Inspect `paradise-spas` Pages deployments |
-| **Cloudflare-bindings** | OAuth **Connect** | KV/D1/R2 if you add bindings later |
+| **Cloudflare-bindings** | OAuth **Connect** | KV/D1/R2 — not used by Paradise site today |
 | **Cloudflare-observability** | OAuth **Connect** | Logs/analytics for `/api/lead` Pages Functions |
 
 Deploy still uses `npm run deploy` + `.env.local` — MCP is for **agent tools**, not a replacement for Wrangler auth.

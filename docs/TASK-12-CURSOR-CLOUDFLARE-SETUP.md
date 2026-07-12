@@ -2,6 +2,10 @@
 
 Complete these on your **local Cursor Desktop** after merging the monorepo migration.
 
+**Scope:** This configures **developer/agent tooling** for the Paradise Spas client site. It does not add Convex, React, or a SaaS backend. Production runtime remains `apps/site` on Cloudflare Pages.
+
+Client-site ops docs: [ARCHITECTURE.md](./ARCHITECTURE.md), [DEPLOYMENT.md](./DEPLOYMENT.md), [ENVIRONMENT.md](./ENVIRONMENT.md).
+
 ## 1. Open the repo correctly
 
 - Clone/pull latest `master` (or your migration branch).
@@ -41,7 +45,7 @@ After copying (or if this workspace already created it for you):
 |--------|-----------------|
 | `Cloudflare-docs` | No — works immediately |
 | `Cloudflare-builds` | Yes — Pages deployment insights |
-| `Cloudflare-bindings` | Yes — KV/D1/R2 bindings |
+| `Cloudflare-bindings` | Yes — KV/D1/R2 bindings *(not used by Paradise site today)* |
 | `Cloudflare-observability` | Yes — logs for Pages Functions |
 
 **Full walkthrough:** [`docs/CLOUDFLARE-MCP-CONNECT.md`](CLOUDFLARE-MCP-CONNECT.md)
@@ -161,19 +165,19 @@ If HTTP MCP fails, add stdio entries to your local `.cursor/mcp.json` instead:
 
 Keep `.cursor/mcp.json` gitignored; never commit API keys.
 
-## 9. Vital MCPs: Convex, GitHub, Exa, Ref
+## 9. Vital MCPs: GitHub, Exa, Ref (Convex optional)
 
 **Full step-by-step:** [`docs/MCP-VITAL-SETUP.md`](MCP-VITAL-SETUP.md)
 
-Quick checklist for your **home machine**:
+Quick checklist for your **home machine** (agent tooling — not live site runtime):
 
-| Server | Auth method |
-|--------|-------------|
-| **Convex** | `npx convex login` + Convex plugin (`/add-plugin convex`); MCP runs via `npx convex mcp start` |
-| **GitHub** | `export GITHUB_PERSONAL_ACCESS_TOKEN=...` (fine-grained PAT with repo + PR write) |
-| **Exa** | `export EXA_API_KEY=...` |
-| **Ref** | `export REF_API_KEY=...` |
-| **Cloudflare** (×3) | OAuth **Connect** in Tools & MCP |
+| Server | Auth method | Paradise client site |
+|--------|-------------|----------------------|
+| **GitHub** | `export GITHUB_PERSONAL_ACCESS_TOKEN=...` | Recommended for PRs |
+| **Exa** | `export EXA_API_KEY=...` | Optional research |
+| **Ref** | `export REF_API_KEY=...` | Optional doc verify |
+| **Convex** | `npx convex login` + `/add-plugin convex` | **Optional** — no Convex backend in this repo |
+| **Cloudflare** (×4) | OAuth **Connect** in Tools & MCP | Useful for deploy/logs |
 
 ```bash
 cp .cursor/mcp.json.example .cursor/mcp.json
@@ -182,3 +186,7 @@ cp .cursor/mcp.json.example .cursor/mcp.json
 ```
 
 For Cloud Agents to open PRs, also set `GH_TOKEN` in your Cursor cloud environment (same PAT).
+
+## 10. Historical plans
+
+`docs/superpowers/plans/` contains past migration and MCP setup plans. Use [ARCHITECTURE.md](./ARCHITECTURE.md) and [DEPLOYMENT.md](./DEPLOYMENT.md) for current client-site operations.
