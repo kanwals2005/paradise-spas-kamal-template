@@ -35,7 +35,16 @@ After copying (or if this workspace already created it for you):
 
 1. Restart Cursor (or reload window).
 2. Open **Customize → Tools & MCP**.
-3. For each Cloudflare server (`Cloudflare-docs`, `Cloudflare-bindings`, `Cloudflare-builds`), click **Connect** and complete OAuth when prompted.
+3. For each Cloudflare server, click **Connect** and complete OAuth when prompted:
+
+| Server | OAuth required? |
+|--------|-----------------|
+| `Cloudflare-docs` | No — works immediately |
+| `Cloudflare-builds` | Yes — Pages deployment insights |
+| `Cloudflare-bindings` | Yes — KV/D1/R2 bindings |
+| `Cloudflare-observability` | Yes — logs for Pages Functions |
+
+**Full walkthrough:** [`docs/CLOUDFLARE-MCP-CONNECT.md`](CLOUDFLARE-MCP-CONNECT.md)
 
 If a server shows `needsAuth`, that is normal until you authorize once.
 
