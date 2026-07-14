@@ -4,6 +4,8 @@
   "scripts": {
     "deploy": "dotenv -e .env.local -- npx wrangler pages deploy apps/site --project-name paradise-spas --branch main",
     "preview:deploy": "dotenv -e .env.local -- npx wrangler pages deploy apps/site --project-name paradise-spas --branch preview",
+    "dev": "npx wrangler pages dev apps/site --port 8788 --compatibility-date 2026-07-07 --compatibility-flag nodejs_compat",
+    "dev:static": "npx serve apps/site -l 4321",
     "ga4:funnel": "node scripts/ga4-funnel-report.mjs",
     "ga4:pages": "node scripts/ga4-funnel-report.mjs --all-pages",
     "check:structure": "node scripts/check-structure.mjs",

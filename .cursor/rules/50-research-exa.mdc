@@ -1,0 +1,36 @@
+---
+description: When to use Exa, Parallel, and Ref for research in this repo
+alwaysApply: true
+---
+
+# External research (Exa, Parallel, Ref)
+
+## When to use
+
+- Current docs, APIs, libraries, competitor pages, or facts not in the repo.
+- Prefer repo sources first: `AGENTS.md`, `apps/dashboard/`, `docs/PLAYBOOK.md`, `docs/research/`.
+
+## Tool priority
+
+1. **Exa** — `get_code_context_exa` first for code, library, and API context.
+2. **Exa** — `web_search_exa` if code context is insufficient.
+3. **Parallel** — `parallel-web-search` skill for general web research.
+4. **Ref** — `ref_search_documentation` + `ref_read_url` only for official doc verification or when Exa/Parallel conflict.
+
+## When not to use
+
+- Editing `apps/site/` or `apps/site/functions/`.
+- Deploy, `check-structure`, or `verify-deploy` workflows.
+- Questions answerable from local repo files or running commands.
+
+## Output
+
+- Inline citations in responses; link sources when presenting findings.
+- Large artifacts → `docs/research/<topic-slug>.json`.
+- Time-sensitive queries: verify and state month/year in the answer.
+
+## MCP unavailable
+
+- Copy `.cursor/mcp.json.example` → `.cursor/mcp.json`.
+- Set `EXA_API_KEY` and `REF_API_KEY` in the environment; reload Cursor.
+- Do not commit `.cursor/mcp.json` or API keys.
