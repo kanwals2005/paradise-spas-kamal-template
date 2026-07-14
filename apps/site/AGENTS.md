@@ -1,5 +1,8 @@
-# apps/site — Cloudflare Pages project
+# apps/site — live Cloudflare Pages project
 
-Deploy root for Wrangler: `apps/site`.
-Static HTML + `functions/` live here together.
-Assets: `assets/`; scripts: `js/`; campaign landers: `campaigns/` (new) or `apps/site/<name>/` (existing live URLs).
+Capability: dealer website + Pages Functions (`/api/lead`).
+
+- Deploy root for Wrangler is this directory.
+- Static HTML/CSS/JS + `functions/` together; inventory in `js/inventory-hot-tubs.js`.
+- Stack / non-goals: [docs/agent/STACK.md](../../docs/agent/STACK.md).
+- Ops: [docs/ops/](../../docs/ops/) (deploy, inventory, QA, leads).

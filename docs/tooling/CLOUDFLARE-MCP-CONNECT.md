@@ -5,7 +5,7 @@ OAuth happens in your browser — the agent cannot click Connect for you.
 
 **Agent tooling only.** Cloudflare MCP helps inspect deployments and `/api/lead` logs. Production deploy still uses `npm run deploy` and `.env.local` — not MCP OAuth.
 
-See [ARCHITECTURE.md](./ARCHITECTURE.md) for what runs on the live client site.
+See [ARCHITECTURE.md](../ops/ARCHITECTURE.md) for what runs on the live client site.
 
 ---
 

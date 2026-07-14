@@ -1,14 +1,8 @@
 ---
 name: deploy-preview
-description: Deploy a Cloudflare Pages preview of apps/site with Wrangler.
+description: Alias — use production-deploy-checklist for Cloudflare Pages preview and promote.
 ---
 
-# Deploy preview
+# Deploy preview (alias)
 
-```bash
-npm install
-export CLOUDFLARE_ACCOUNT_ID=...
-npm run preview:deploy
-```
-
-Confirm `package.json` deploys `apps/site`, not repo root.
+Use the **`production-deploy-checklist`** skill. Preview is step 4 of that workflow (`npm run preview:deploy`).

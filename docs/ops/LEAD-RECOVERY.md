@@ -7,8 +7,8 @@ When GHL fails but the lead vault succeeds, the lead is safe in Google Sheets. U
 1. Every submit → **All Leads** tab (must succeed for visitor success response)
 2. GHL failure → row also copied to **Missed Leads** tab + optional email alert
 
-Architecture: [apps/dashboard/LEAD_INSURANCE_PLAN.md](../apps/dashboard/LEAD_INSURANCE_PLAN.md)  
-Setup: [apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md](../apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md)
+Architecture: [apps/dashboard/LEAD_INSURANCE_PLAN.md](../../apps/dashboard/LEAD_INSURANCE_PLAN.md)  
+Setup: [apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md](../../apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md)
 
 ## When to reimport
 

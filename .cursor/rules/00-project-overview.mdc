@@ -5,8 +5,9 @@ alwaysApply: true
 
 # Project overview
 
-- Read `AGENTS.md` first. Open the workspace at the repo root.
-- Live site + Pages Functions: `apps/site/`.
+- Open the workspace at the **repo root**. Read `AGENTS.md` first.
+- **Today:** `apps/site/` on Cloudflare Pages + Functions. See `docs/agent/STACK.md`.
+- Ops truth: `docs/ops/`. Agent map: `docs/agent/`. Tooling: `docs/tooling/`.
 - SOPs: `apps/dashboard/`. Portable kit: `packages/agency-starter/`.
-- Playbook: `docs/PLAYBOOK.md` — open only when the task is conversion strategy.
-- Vanilla HTML/CSS/JS only in `apps/site` unless a human explicitly requests a framework.
+- Do not scaffold Next.js / Vercel unless the user explicitly scopes that work.
+- Playbook (`docs/PLAYBOOK.md`) — only when the task is conversion strategy.

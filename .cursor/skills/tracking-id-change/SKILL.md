@@ -11,4 +11,4 @@ description: Change GA4, Meta Pixel, Clarity, or GHL form/chat IDs across apps/s
 4. Check `apps/site/js/call-tracking.js` and `pricing-tracking.js` — usually no ID change needed.
 5. Update `apps/dashboard/README.md` ID table if ops docs must match.
 6. Align Cloudflare Pages env if Meta CAPI pixel ID changes (`META_PIXEL_ID`).
-7. QA per `docs/QA-CHECKLIST.md` tracking section after preview deploy.
+7. QA per `docs/ops/QA-CHECKLIST.md` tracking section after preview deploy.

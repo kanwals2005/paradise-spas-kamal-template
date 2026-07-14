@@ -14,7 +14,7 @@ Cloudflare MCP servers use OAuth in Cursor (section 3 below).
 
 Do **not** commit `.cursor/mcp.json` or API tokens.
 
-See also: [ARCHITECTURE.md](./ARCHITECTURE.md), [ENVIRONMENT.md](./ENVIRONMENT.md).
+See also: [ARCHITECTURE.md](../ops/ARCHITECTURE.md), [ENVIRONMENT.md](../ops/ENVIRONMENT.md).
 
 ---
 
@@ -106,7 +106,7 @@ Requires Docker Desktop. In local `.cursor/mcp.json` only:
 
 ### Exa / Ref stdio fallback
 
-See `docs/TASK-12-CURSOR-CLOUDFLARE-SETUP.md` section 8.
+See `docs/tooling/TASK-12-CURSOR-CLOUDFLARE-SETUP.md` section 8.
 
 ---
 

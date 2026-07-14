@@ -8,7 +8,7 @@ alwaysApply: true
 ## When to use
 
 - Current docs, APIs, libraries, competitor pages, or facts not in the repo.
-- Prefer repo sources first: `AGENTS.md`, `apps/dashboard/`, `docs/PLAYBOOK.md`, `docs/research/`.
+- Prefer repo sources first: `AGENTS.md`, `apps/dashboard/`, `docs/PLAYBOOK.md`, `docs/archive/research/`.
 
 ## Tool priority
 
@@ -26,7 +26,7 @@ alwaysApply: true
 ## Output
 
 - Inline citations in responses; link sources when presenting findings.
-- Large artifacts → `docs/research/<topic-slug>.json`.
+- Large artifacts → `docs/archive/research/<topic-slug>.json`.
 - Time-sensitive queries: verify and state month/year in the answer.
 
 ## MCP unavailable

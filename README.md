@@ -14,7 +14,7 @@ This repo is the **current client site**, not a SaaS platform. Runtime is vanill
 | `apps/site/` | Live website + Cloudflare Pages Functions |
 | `apps/dashboard/` | ROAS dashboard / tracking / lead-insurance SOPs |
 | `packages/agency-starter/` | Reusable lead stack for **other** clients (secondary) |
-| `docs/` | Architecture, deployment, operations, QA |
+| `docs/` | Agent orientation, ops, tooling, plans, archive |
 | `AGENTS.md` | Instructions for coding agents |
 
 Open this repository at the **root** in Cursor.
@@ -23,16 +23,19 @@ Open this repository at the **root** in Cursor.
 
 | Doc | Purpose |
 |-----|---------|
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | What runs in production today |
-| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Preview and production deploy |
-| [docs/ENVIRONMENT.md](docs/ENVIRONMENT.md) | Env vars by layer |
-| [docs/CLIENT-OPERATIONS.md](docs/CLIENT-OPERATIONS.md) | Routine content updates |
-| [docs/INVENTORY-UPDATE.md](docs/INVENTORY-UPDATE.md) | Product/pricing in JS |
-| [docs/QA-CHECKLIST.md](docs/QA-CHECKLIST.md) | Pre/post deploy smoke tests |
-| [docs/LEAD-RECOVERY.md](docs/LEAD-RECOVERY.md) | Missed GHL lead reimport |
+| [docs/agent/](docs/agent/) | Agent orientation — stack, map, conventions |
+| [docs/ops/ARCHITECTURE.md](docs/ops/ARCHITECTURE.md) | What runs in production today |
+| [docs/ops/DEPLOYMENT.md](docs/ops/DEPLOYMENT.md) | Preview and production deploy |
+| [docs/ops/ENVIRONMENT.md](docs/ops/ENVIRONMENT.md) | Env vars by layer |
+| [docs/ops/CLIENT-OPERATIONS.md](docs/ops/CLIENT-OPERATIONS.md) | Routine content updates |
+| [docs/ops/INVENTORY-UPDATE.md](docs/ops/INVENTORY-UPDATE.md) | Product/pricing in JS |
+| [docs/ops/QA-CHECKLIST.md](docs/ops/QA-CHECKLIST.md) | Pre/post deploy smoke tests |
+| [docs/ops/LEAD-RECOVERY.md](docs/ops/LEAD-RECOVERY.md) | Missed GHL lead reimport |
 | [docs/PLAYBOOK.md](docs/PLAYBOOK.md) | Conversion playbook (strategy) |
+| [docs/tooling/](docs/tooling/) | MCP / Cursor machine setup |
 
-Historical agent implementation plans: `docs/superpowers/plans/` — not day-to-day ops.
+Historical plans and research: `docs/archive/` — not day-to-day ops.  
+Active plans: `docs/plans/`.
 
 ## What's on the live site
 
@@ -60,7 +63,7 @@ npm run deploy               # production
 | `npm run preview:deploy` | Cloudflare preview |
 | `npm run deploy` | Production |
 
-See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+See [docs/ops/DEPLOYMENT.md](docs/ops/DEPLOYMENT.md).
 
 ## Key files
 
@@ -83,4 +86,4 @@ Paradise Spas source of truth remains `apps/site/` (may diverge from the kit).
 
 MCP servers (Cloudflare, GitHub, Exa, Ref) help **developers and agents** — they are not part of the live site runtime.  
 Convex MCP is optional tooling; this repo has no Convex backend.  
-Setup: [docs/MCP-VITAL-SETUP.md](docs/MCP-VITAL-SETUP.md), [docs/TASK-12-CURSOR-CLOUDFLARE-SETUP.md](docs/TASK-12-CURSOR-CLOUDFLARE-SETUP.md).
+Setup: [docs/tooling/MCP-VITAL-SETUP.md](docs/tooling/MCP-VITAL-SETUP.md), [docs/tooling/TASK-12-CURSOR-CLOUDFLARE-SETUP.md](docs/tooling/TASK-12-CURSOR-CLOUDFLARE-SETUP.md).

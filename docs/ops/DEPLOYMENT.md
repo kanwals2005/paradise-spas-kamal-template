@@ -75,5 +75,5 @@ Or redeploy a known-good git commit with `npm run deploy`.
 
 ## Related
 
-- [TASK-12-CURSOR-CLOUDFLARE-SETUP.md](./TASK-12-CURSOR-CLOUDFLARE-SETUP.md)
+- [TASK-12-CURSOR-CLOUDFLARE-SETUP.md](../tooling/TASK-12-CURSOR-CLOUDFLARE-SETUP.md)
 - [QA-CHECKLIST.md](./QA-CHECKLIST.md)

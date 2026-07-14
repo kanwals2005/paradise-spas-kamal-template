@@ -36,7 +36,7 @@ These variables are **not** read by the live site or `/api/lead`.
 | `META_CAPI_ACCESS_TOKEN` | Optional | Server-side Meta Lead events |
 | `META_PIXEL_ID` | Optional | Defaults to site pixel if unset |
 
-Full setup: [apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md](../apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md)
+Full setup: [apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md](../../apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md)
 
 ## 3. Local Pages dev (Wrangler)
 
@@ -72,7 +72,7 @@ Cloudflare MCP servers use OAuth in Cursor (not env vars).
 
 Convex MCP runs via `npx convex mcp start` — optional agent tooling; **no Convex project in this repo**.
 
-Setup: [MCP-VITAL-SETUP.md](./MCP-VITAL-SETUP.md)
+Setup: [MCP-VITAL-SETUP.md](../tooling/MCP-VITAL-SETUP.md)
 
 ## Quick reference
 

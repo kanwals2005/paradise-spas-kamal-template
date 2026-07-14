@@ -82,5 +82,5 @@ If not needed in production, consider noindex or removal in a separate change.
 ## Related
 
 - [DEPLOYMENT.md](./DEPLOYMENT.md)
-- [apps/dashboard/FORM_GATE_QA.md](../apps/dashboard/FORM_GATE_QA.md)
+- [apps/dashboard/FORM_GATE_QA.md](../../apps/dashboard/FORM_GATE_QA.md)
 - [LEAD-RECOVERY.md](./LEAD-RECOVERY.md)

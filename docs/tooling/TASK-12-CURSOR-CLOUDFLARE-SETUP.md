@@ -4,7 +4,7 @@ Complete these on your **local Cursor Desktop** after merging the monorepo migra
 
 **Scope:** This configures **developer/agent tooling** for the Paradise Spas client site. It does not add Convex, React, or a SaaS backend. Production runtime remains `apps/site` on Cloudflare Pages.
 
-Client-site ops docs: [ARCHITECTURE.md](./ARCHITECTURE.md), [DEPLOYMENT.md](./DEPLOYMENT.md), [ENVIRONMENT.md](./ENVIRONMENT.md).
+Client-site ops docs: [ARCHITECTURE.md](../ops/ARCHITECTURE.md), [DEPLOYMENT.md](../ops/DEPLOYMENT.md), [ENVIRONMENT.md](../ops/ENVIRONMENT.md).
 
 ## 1. Open the repo correctly
 
@@ -48,7 +48,7 @@ After copying (or if this workspace already created it for you):
 | `Cloudflare-bindings` | Yes — KV/D1/R2 bindings *(not used by Paradise site today)* |
 | `Cloudflare-observability` | Yes — logs for Pages Functions |
 
-**Full walkthrough:** [`docs/CLOUDFLARE-MCP-CONNECT.md`](CLOUDFLARE-MCP-CONNECT.md)
+**Full walkthrough:** [`CLOUDFLARE-MCP-CONNECT.md`](./CLOUDFLARE-MCP-CONNECT.md)
 
 If a server shows `needsAuth`, that is normal until you authorize once.
 
@@ -167,7 +167,7 @@ Keep `.cursor/mcp.json` gitignored; never commit API keys.
 
 ## 9. Vital MCPs: GitHub, Exa, Ref (Convex optional)
 
-**Full step-by-step:** [`docs/MCP-VITAL-SETUP.md`](MCP-VITAL-SETUP.md)
+**Full step-by-step:** [`MCP-VITAL-SETUP.md`](./MCP-VITAL-SETUP.md)
 
 Quick checklist for your **home machine** (agent tooling — not live site runtime):
 
@@ -189,4 +189,4 @@ For Cloud Agents to open PRs, also set `GH_TOKEN` in your Cursor cloud environme
 
 ## 10. Historical plans
 
-`docs/superpowers/plans/` contains past migration and MCP setup plans. Use [ARCHITECTURE.md](./ARCHITECTURE.md) and [DEPLOYMENT.md](./DEPLOYMENT.md) for current client-site operations.
+`docs/archive/plans/` contains past migration and MCP setup plans. Use [ARCHITECTURE.md](../ops/ARCHITECTURE.md) and [DEPLOYMENT.md](../ops/DEPLOYMENT.md) for current client-site operations.

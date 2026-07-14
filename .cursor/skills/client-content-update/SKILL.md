@@ -5,7 +5,7 @@ description: Update Paradise Spas business info, branding, or page copy in apps/
 
 # Client content update
 
-1. Read `docs/CLIENT-OPERATIONS.md`.
+1. Read `docs/ops/CLIENT-OPERATIONS.md`.
 2. Search repo for existing phone, address, email, and tracking values — do not invent.
 3. Edit `apps/site/**/*.html` and `apps/site/style.css` as needed.
 4. Keep absolute asset paths: `/js/`, `/css/`, `/assets/`, `/style.css`.

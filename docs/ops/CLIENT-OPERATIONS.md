@@ -80,7 +80,7 @@ See [INVENTORY-UPDATE.md](./INVENTORY-UPDATE.md).
 ```bash
 npm run verify:deploy
 npm run preview:deploy
-# QA per docs/QA-CHECKLIST.md
+# QA per docs/ops/QA-CHECKLIST.md
 npm run deploy
 ```
 

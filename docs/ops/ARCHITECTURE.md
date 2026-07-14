@@ -51,6 +51,7 @@ Pages Functions **must** stay under `apps/site/functions/` in the same Cloudflar
 - [DEPLOYMENT.md](./DEPLOYMENT.md) — how to deploy safely
 - [ENVIRONMENT.md](./ENVIRONMENT.md) — env vars by layer
 - [INVENTORY-UPDATE.md](./INVENTORY-UPDATE.md) — how inventory is maintained today
-- [apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md](../apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md) — lead API setup
+- [apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md](../../apps/dashboard/LEAD_INSURANCE_OWNER_SETUP.md) — lead API setup
+- [docs/agent/STACK.md](../agent/STACK.md) — current vs future stack
 
-Historical implementation plans live in `docs/superpowers/plans/` — not current operating instructions.
+Historical plans: `docs/archive/plans/` — not current operating instructions.
