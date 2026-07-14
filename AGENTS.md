@@ -1,48 +1,56 @@
-# AGENTS.md — Paradise Spas / dealer website template
+# AGENTS.md — Paradise Spas / Kamal
 
-## What this repo is
-Static Cloudflare Pages dealer site (Paradise Spas) + Pages Functions lead API +
-agency-starter kit + dashboard SOPs. **Vanilla HTML/CSS/JS only** in `apps/site`.
-Do not introduce React/Vue/Next unless a human explicitly asks.
+## Mission
 
-## Open Cursor at the repository root
-Never open only `apps/site/` as the workspace root — you will lose monorepo context.
+Dealer client site for Paradise Spas: static HTML lead capture → Cloudflare Pages Function → Google Sheets vault → GoHighLevel → Meta CAPI. Preserve lead reliability and Day-2 updateability.
 
-## Layout
-- `apps/site/` — live website + `functions/` (Pages project root)
-- `apps/dashboard/` — Looker/GHL/GA4 SOPs (markdown + Apps Script)
-- `packages/agency-starter/` — portable lead-stack kit for other clients
-- `scripts/` — GA4 reports / lead reimport
-- `docs/PLAYBOOK.md` — conversion playbook (load only when asked)
-- `.cursor/rules/` — always-on guardrails
-- `.cursor/skills/` — on-demand workflows
+## Non-goals (this tree)
 
-## Commands
+- Do not rewrite the live Pages site as Next.js or move hosting unless the user explicitly scopes that work.
+- Do not treat Convex / Vercel as production dependencies of the current site.
+- Do not invent product features not requested by the client.
+
+## Where truth lives
+
+| Need | Path |
+|------|------|
+| Product orientation | [docs/agent/README.md](docs/agent/README.md) |
+| Stack (Cloudflare / Convex / future Next) | [docs/agent/STACK.md](docs/agent/STACK.md) |
+| Full path map | [docs/agent/NAVIGATION.md](docs/agent/NAVIGATION.md) |
+| Naming / no-redundancy | [docs/agent/CONVENTIONS.md](docs/agent/CONVENTIONS.md) |
+| Architecture & lead pipeline | [docs/ops/ARCHITECTURE.md](docs/ops/ARCHITECTURE.md) |
+| Deploy / promote / rollback | [docs/ops/DEPLOYMENT.md](docs/ops/DEPLOYMENT.md) |
+| Env & secrets | [docs/ops/ENVIRONMENT.md](docs/ops/ENVIRONMENT.md) |
+| Inventory edits | [docs/ops/INVENTORY-UPDATE.md](docs/ops/INVENTORY-UPDATE.md) |
+| QA before promote | [docs/ops/QA-CHECKLIST.md](docs/ops/QA-CHECKLIST.md) |
+| Lead recovery | [docs/ops/LEAD-RECOVERY.md](docs/ops/LEAD-RECOVERY.md) |
+| Client weekly ops | [docs/ops/CLIENT-OPERATIONS.md](docs/ops/CLIENT-OPERATIONS.md) |
+| MCP / tooling | [docs/tooling/](docs/tooling/) |
+| Human playbook | [docs/PLAYBOOK.md](docs/PLAYBOOK.md) |
+| Active plans | [docs/plans/](docs/plans/) |
+| Structure guard | `npm run check:structure` · path map in [docs/agent/NAVIGATION.md](docs/agent/NAVIGATION.md) |
+
+## Hard constraints
+
+1. Prefer updating inventory / copy over new frameworks.
+2. Never break `/api/lead` Sheets → GHL → Meta order.
+3. Never commit secrets; use Wrangler secrets / `.env.local` (gitignored).
+4. Secrets and durable lead state stay outside ephemeral Workers memory — see ops Architecture.
+5. Preview before promote; run `npm run verify:deploy` and QA when changing site or Functions.
+
+## Agent workflow (progressive disclosure)
+
+1. Read this file, then [docs/agent/README.md](docs/agent/README.md) if stacking or paths are unclear.
+2. Load only the ops doc required for the task (deploy, inventory, lead recovery, etc.).
+3. Prefer a matching skill under [`.cursor/skills/`](.cursor/skills/) before inventing a procedure.
+4. Nested `AGENTS.md` under `apps/*` and `packages/agency-starter/` — package deltas only.
+5. If documentation disagrees with `apps/site` or Workers code, **code wins**; update the doc.
+
+## Verification
+
 ```bash
-npm install
-npm run check:structure   # verify monorepo layout
-npm run verify:deploy     # verify deploy targets apps/site
-npm run deploy            # production Pages deploy of apps/site
-npm run preview:deploy    # preview branch deploy
-npm run ga4:funnel        # GA4 funnel report (needs credentials)
+npm run check:structure
+npm run verify:deploy
 ```
 
-## Cursor + Cloudflare (Task 12 — human setup)
-See `docs/TASK-12-CURSOR-CLOUDFLARE-SETUP.md`. Summary: open repo at root, run `/add-plugin cloudflare`, copy `.cursor/mcp.json.example` → `.cursor/mcp.json`, OAuth-connect MCP servers, confirm GitHub default branch is `master`, run `npm run verify:deploy` before production deploy.
-
-## Non-negotiables
-1. Pages Functions stay at `apps/site/functions/` (same project as HTML).
-2. Never commit `.env`, GA4 JSON keys, or `.cursor/mcp.json` secrets.
-3. Prefer `/js/...` and `/assets/...` absolute paths in HTML after migration.
-4. Tracking IDs and GHL form IDs: search existing files; do not invent new ones.
-5. Branch from `master`; one focused PR per change.
-
-## Where to look
-| Task | Start here |
-|------|------------|
-| Homepage / inventory / products | `apps/site/` |
-| Lead API / GHL / Sheets / CAPI | `apps/site/functions/` |
-| Campaign landers | `apps/site/` (existing) or `apps/site/campaigns/` (new) |
-| Analytics SOPs | `apps/dashboard/` |
-| New non-dealer client kit | `packages/agency-starter/` |
-| Conversion strategy prose | `docs/PLAYBOOK.md` |
+Promote only after preview + QA ([docs/ops/QA-CHECKLIST.md](docs/ops/QA-CHECKLIST.md)).

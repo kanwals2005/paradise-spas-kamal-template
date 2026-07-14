@@ -10,7 +10,7 @@ apps/site/assets/
 *.pdf
 
 # Research dumps / lock noise
-docs/research/*.json
+docs/archive/research/*.json
 package-lock.json
 node_modules/
 .wrangler/
